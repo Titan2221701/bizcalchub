@@ -55,7 +55,7 @@ def main():
         for key,value in c['runtime'].items():
             assert re.findall(r'\{\w+\}',key)==re.findall(r'\{\w+\}',value),(lang,key)
     english=build.CATALOGS['en']['strings']
-    allowed_same={'English','Deutsch','Espa\u00f1ol','support@bizcalchub.top','ROI','ROAS','4.00x (4.00:1)','4.00x','2.00x','ROI = ($2,500 / $10,000) \u00d7 100 ='}
+    allowed_same={'BizCalcHub','English','Deutsch','Espa\u00f1ol','support@bizcalchub.top','ROI','ROAS','4.00x (4.00:1)','4.00x','2.00x','ROI = ($2,500 / $10,000) \u00d7 100 ='}
     for lang in ('de','es'):
         for key,value in catalogs[lang]['strings'].items():
             assert value!=key or key in allowed_same,(lang,'Untranslated English',key)
@@ -119,7 +119,8 @@ def main():
                     assert 'advertising-disclosure.html' in nav,path
                 if source.parent != Path('calculators') and source.name != 'index.html':
                     assert 'class="ad"' not in text,path
-                assert len([a for tag,a in page.tags if tag=='link' and a.get('rel')=='icon'])==2
+                icons=[a for tag,a in page.tags if tag=='link' and a.get('rel')=='icon']
+                assert any(a.get('href')=='/assets/bizcalchub-logo.png' and a.get('type')=='image/png' for a in icons)
                 switch=re.search(r'<nav class="language-switcher".*?</nav>',text,re.S).group()
                 assert len(re.findall(r'<a\b',switch))==3
                 assert switch.count('aria-current="page"')==1

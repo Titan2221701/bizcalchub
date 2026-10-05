@@ -91,15 +91,13 @@ def translated_html(source, lang, text):
                 raise ValueError(f'Missing {lang} attribute: {value}')
             return match.group(0)
         return key+'="'+html.escape(translated,quote=True)+'"'
-    text = re.sub(r'(aria-label|placeholder|title)="([^"]+)"',attr,text)
+    text = re.sub(r'(aria-label|placeholder|title|alt)="([^"]+)"',attr,text)
     text = re.sub(r'(<meta name="description" content=")([^"]+)(")',
                   lambda m:m.group(1)+html.escape(CATALOGS[lang]['strings'][html.unescape(m.group(2))],quote=True)+m.group(3),text)
     for i,block in enumerate(scripts):
         text=text.replace(f'<script-placeholder data-index="{i}"></script-placeholder>',block)
     text=text.replace('<html lang="en">',f'<html lang="{lang}">')
-    brand=CATALOGS[lang]['brand']
-    text=re.sub(r'(<a class="brand"[^>]*>).*?<span>.*?</span></a>',
-                lambda m:m.group(1)+html.escape(brand['prefix'])+' <span>'+html.escape(brand['suffix'])+'</span></a>',text)
+    text=text.replace('<a class="site-brand" href="/">', f'<a class="site-brand" href="/{lang}/">')
     def link(match):
         key,value=match.groups()
         parsed=urlsplit(html.unescape(value))
@@ -108,7 +106,7 @@ def translated_html(source, lang, text):
             query['hl']=lang
             localized=urlunsplit((parsed.scheme, parsed.netloc, parsed.path, urlencode(query), parsed.fragment))
             return key+'="'+html.escape(localized,quote=True)+'"'
-        if parsed.scheme or parsed.netloc or not parsed.path:
+        if parsed.scheme or parsed.netloc or not parsed.path or parsed.path.startswith('/'):
             return match.group(0)
         target=Path(posixpath.normpath(posixpath.join(source.parent.as_posix(),parsed.path)))
         # HTML navigation stays within the selected language; assets remain shared.
@@ -135,7 +133,7 @@ def generated_sections(source,lang,text):
     description = html.unescape(re.search(r'<meta name="description" content="([^"]+)">', text).group(1))
     social = {'og:type': 'website', 'og:url': absolute_url(source, lang),
               'og:title': title, 'og:description': description,
-              'og:site_name': CATALOGS[lang]['strings']['Free Business Calculators'],
+              'og:site_name': 'BizCalcHub',
               'og:locale': {'en': 'en_US', 'de': 'de_DE', 'es': 'es_ES'}[lang]}
     head += [f'  <meta property="{key}" content="{html.escape(value, quote=True)}">' for key, value in social.items()]
     head += [f'  <meta property="og:locale:alternate" content="{locale}">'

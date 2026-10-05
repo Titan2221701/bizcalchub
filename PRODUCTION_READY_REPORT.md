@@ -1,5 +1,15 @@
 # Production readiness report
 
+## Subsequent BizCalcHub branding update
+
+The official assets/bizcalchub-logo.png is unchanged and now appears in all 36 headers and PNG favicon references. Logo links point to /, /de/, or /es/ according to page language. Desktop and mobile CSS limits are 58px and 42px, with intrinsic dimensions reserved and max-width containment. Homepage SEO titles, descriptions, and hero slogans are localized; other pages retain their individual topic titles with BizCalcHub branding. Footer, policy, and Open Graph branding are consistent.
+
+Post-branding checks passed: 36 HTML documents, 1,108 local references, 42 HTTP resources, all three directory home routes, all existing calculator suites, and 674 runtime translation cases. Header navigation and language switchers, all advertising containers, and all formula blocks are byte-identical to their pre-branding versions. Calculator and localization JavaScript and the official logo are also unchanged.
+
+Rendered header alignment and mobile overflow remain unverified: Chrome was unable to create its isolated profile because Windows denied access. The attempted verification left an inaccessible temporary directory, bizcalchub-browser-9ch0tudo, outside the website assets. Automatic approval review rejected the recursive cleanup command because it required a sandbox approval that this environment disables; non-recursive cleanup also failed with access denied. Exclude this temporary directory from deployment.
+
+The original production-configuration results below describe the earlier snapshot. See changed-files.md for the current branding update inventory.
+
 Date: 2026-10-05
 Production origin: https://bizcalchub.top
 Support email: support@bizcalchub.top

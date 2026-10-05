@@ -1,16 +1,9 @@
-# Production configuration changed files
+# BizCalcHub branding changed files
 
-Date: 2026-10-05
-
-Production domain: https://bizcalchub.top
-Support email: support@bizcalchub.top
-
-This inventory covers the production-domain and contact update. See PRODUCTION_READY_REPORT.md for validation results and remaining launch checks.
+The official logo was reused unchanged. This inventory covers the current branding update; see PRODUCTION_READY_REPORT.md for validation details.
 
 - `404.html`
 - `MULTILINGUAL.md`
-- `POST_FIX_AUDIT.md`
-- `PRE_LAUNCH_AUDIT.md`
 - `PRODUCTION_READY_REPORT.md`
 - `about.html`
 - `advertising-disclosure.html`
@@ -50,9 +43,7 @@ This inventory covers the production-domain and contact update. See PRODUCTION_R
 - `locales/en.json`
 - `locales/es.json`
 - `privacy-policy.html`
-- `robots.txt`
-- `sitemap.xml`
+- `style.css`
 - `terms.html`
-- `tests/check_launch_readiness.py`
 - `tests/check_locales.py`
 - `tools/build_locales.py`

@@ -50,3 +50,9 @@ python -X utf8 tests/check_launch_readiness.py
 The Windows build wrapper runs both Python validators. The JavaScript suites should still be run directly using the command above. Keep calculator source, formulas, validation constraints, and number formatting unchanged when editing site content.
 
 PRE_LAUNCH_AUDIT.md records the original audit. POST_FIX_AUDIT.md records the implementation outcome, remaining deployment/account requirements, and checks that could not be run without a connected browser or real production origin.
+
+## BizCalcHub branding
+
+The supplied official PNG at assets/bizcalchub-logo.png is used unchanged in every header and as the PNG favicon. Header image dimensions reserve its 3:1 aspect ratio; CSS limits its height to 58px on desktop and 42px at widths up to 768px. Logo links use root-relative localized homepage routes, while navigation and language-switcher links retain their existing routing. Root-relative asset URLs are preserved by the translation builder.
+
+Homepage titles, descriptions, and hero slogans are localized from the new BizCalcHub copy. Other pages keep descriptive page-specific titles with BizCalcHub branding. Open Graph site branding, policy text, and footer branding use the same platform name. Update the locale entries and rebuild when changing these strings.
