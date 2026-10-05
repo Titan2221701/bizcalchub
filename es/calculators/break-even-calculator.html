@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Calculadora de punto de equilibrio - Unidades e ingresos</title>
+  <meta name="description" content="Calcula unidades e ingresos de equilibrio y margen de contribución con costes fijos, precio y coste variable. Incluye ejemplos y preguntas.">
+  <meta name="theme-color" content="#153a56">
+  <link rel="icon" href="../../assets/favicon.ico" type="image/x-icon" sizes="16x16 32x32 48x48 64x64">
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml" sizes="any">
+  <link rel="stylesheet" href="../../style.css">
+  <script src="../../script.js" defer></script>
+  <script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Qué es el punto de equilibrio?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Es el volumen de ventas en el que los ingresos totales igualan los costes fijos y variables incluidos en el análisis. En ese volumen, el beneficio total del modelo es cero."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cómo calculo las unidades del punto de equilibrio?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Resta el coste variable por unidad al precio de venta por unidad y divide los costes fijos entre ese margen de contribución. La fórmula requiere un margen de contribución positivo para ofrecer un objetivo de ventas útil."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué se considera coste fijo?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Los costes fijos no varían con el volumen de ventas dentro del rango y periodo del modelo, como un alquiler mensual o una suscripción fija de software. Clasifica los costes de tu empresa de forma coherente."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué se considera coste variable por unidad?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Los costes variables cambian con las unidades vendidas. Pueden incluir materiales, embalaje o comisiones por venta. Usa el coste variable de una unidad, no el total de todas."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿El beneficio por unidad equivale al beneficio neto?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Aquí significa precio de venta menos coste variable por unidad, también llamado margen de contribución por unidad. Ese importe ayuda a cubrir costes fijos antes de generar beneficio empresarial."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué ocurre si el margen de contribución es cero?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Con costes fijos positivos, las ventas no pueden cubrirlos porque cada unidad aporta cero. Las unidades y los ingresos de equilibrio muestran N/A. Si los costes fijos también son cero, el modelo está en equilibrio con cero ventas y con cualquier volumen de ventas."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué ocurre si el margen de contribución es negativo?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Cada venta aumenta la pérdida del modelo. Con costes fijos positivos, no existe un volumen de equilibrio no negativo. Si los costes fijos son cero, cero ventas es el punto de equilibrio, pero cualquier venta genera pérdidas."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Debo redondear hacia arriba las unidades de equilibrio?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Para productos indivisibles, redondea el resultado sin redondear de la fórmula hacia arriba a una unidad entera. El resultado principal muestra la cantidad teórica y la nota muestra el objetivo en unidades enteras. Los ingresos de equilibrio usan la cantidad teórica sin redondear."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué ocurre si los costes fijos son cero?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Cero ventas cubren cero costes fijos, por lo que las unidades y los ingresos de equilibrio son cero. Un margen de contribución positivo hace rentable cada venta adicional; uno negativo convierte cada venta adicional en pérdida."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Puedo usarla para varios productos?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Esta calculadora modela un producto o una unidad representativa. Los productos con diferentes precios y costes variables requieren un margen de contribución ponderado según una mezcla de ventas prevista. Cambiar esa mezcla cambia el resultado."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué periodo y moneda debo usar?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Usa costes fijos de un periodo coherente y cifras unitarias aplicables a sus ventas. Todos los importes deben usar la misma moneda. Los ingresos y el margen de contribución se expresan en esa moneda."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Se guardan mis datos o se envían a un servidor?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Los cálculos se ejecutan en tu navegador. La calculadora no envía datos a un servidor ni los guarda en una base de datos o en el almacenamiento del navegador. Restablecer vacía el formulario."
+        }
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Inicio",
+        "item": "https://bizcalchub.top/es/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Calculadoras",
+        "item": "https://bizcalchub.top/es/#calculators"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Calculadora de punto de equilibrio"
+      }
+    ]
+  }
+]
+</script>
+  <!-- multilingual-seo:start -->
+  <link rel="canonical" href="https://bizcalchub.top/es/calculators/break-even-calculator.html">
+  <link rel="alternate" hreflang="en" href="https://bizcalchub.top/calculators/break-even-calculator.html">
+  <link rel="alternate" hreflang="de" href="https://bizcalchub.top/de/calculators/break-even-calculator.html">
+  <link rel="alternate" hreflang="es" href="https://bizcalchub.top/es/calculators/break-even-calculator.html">
+  <link rel="alternate" hreflang="x-default" href="https://bizcalchub.top/calculators/break-even-calculator.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://bizcalchub.top/es/calculators/break-even-calculator.html">
+  <meta property="og:title" content="Calculadora de punto de equilibrio - Unidades e ingresos">
+  <meta property="og:description" content="Calcula unidades e ingresos de equilibrio y margen de contribución con costes fijos, precio y coste variable. Incluye ejemplos y preguntas.">
+  <meta property="og:site_name" content="Calculadoras empresariales gratuitas">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:locale:alternate" content="de_DE">
+  <!-- multilingual-seo:end -->
+  <script type="application/json" id="calculator-translations">{"messages":{"Profit is in the same currency as your inputs. Results are rounded to two decimal places.":"El beneficio usa la misma moneda que tus datos. Los resultados se redondean a dos decimales.","Your costs exceed your revenue, resulting in a loss.":"Tus costes superan los ingresos y generan una pérdida.","Profit margin is undefined because revenue is zero.":"El margen es indefinido porque los ingresos son cero.","Markup is undefined because cost is zero.":"El recargo es indefinido porque el coste es cero.","Profit and selling price use the same currency as your cost. Results are rounded to two decimal places.":"El beneficio y el precio usan la moneda del coste. Los resultados se redondean a dos decimales.","Profit margin is undefined because selling price is zero.":"El margen es indefinido porque el precio de venta es cero.","Expenses excluded from your cost are not included in this profit amount.":"Los gastos excluidos del coste no se incluyen en este beneficio.","Profit uses the same currency as your inputs. Results are rounded to two decimal places.":"El beneficio usa la moneda de tus datos. Los resultados se redondean a dos decimales.","Final return is below initial investment, resulting in a loss.":"El retorno final es inferior a la inversión inicial y genera una pérdida.","ROI is undefined because initial investment is zero.":"ROI es indefinido porque la inversión inicial es cero.","Final return equals initial investment: the investment breaks even.":"El retorno final iguala la inversión inicial: la inversión alcanza el equilibrio.","This is simple ROI for your chosen period, not an annualized return.":"Este es ROI simple del periodo elegido, no un rendimiento anualizado.","Profit uses your input currency and subtracts advertising spend only. Other business costs are excluded. Results are rounded to two decimal places.":"El beneficio usa tu moneda y resta solo publicidad. Se excluyen otros costes empresariales. Los resultados se redondean a dos decimales.","ROAS ratio and percentage are undefined because advertising spend is zero.":"La proporción y el porcentaje ROAS son indefinidos porque el gasto publicitario es cero.","Each unit of ad spend generated {value} units of attributed revenue.":"Cada unidad de gasto publicitario generó {value} unidades de ingresos atribuidos.","Revenue is below ad spend, resulting in a loss before other costs.":"Los ingresos son inferiores al gasto publicitario y generan una pérdida antes de otros costes.","Revenue covers ad spend only; other costs still need to be covered.":"Los ingresos solo cubren publicidad; aún deben cubrirse otros costes.","Revenue and contribution use your input currency. Results are rounded to two decimal places; revenue uses the unrounded theoretical unit quantity.":"Los ingresos y la contribución usan tu moneda. Los resultados se redondean a dos decimales; los ingresos usan la cantidad teórica sin redondear.","Contribution margin is zero. Sales contribute nothing toward positive fixed costs, so there is no break even sales target.":"El margen de contribución es cero. Las ventas no aportan nada a cubrir costes fijos positivos, por lo que no existe un objetivo de equilibrio.","Contribution margin is negative. Each sale increases the loss, so no nonnegative sales volume covers positive fixed costs.":"El margen de contribución es negativo. Cada venta aumenta la pérdida, por lo que ningún volumen no negativo cubre costes fijos positivos.","With zero fixed costs, zero sales is the break even point.":"Con costes fijos cero, cero ventas es el punto de equilibrio.","Any positive sales volume creates a loss because contribution margin is negative.":"Cualquier volumen de ventas positivo genera pérdida porque la contribución es negativa.","With zero contribution margin, all sales volumes also break even in this model.":"Con margen de contribución cero, todos los volúmenes también están en equilibrio en este modelo.","For indivisible products, sell at least {value} whole units to cover these costs.":"Para productos indivisibles, vende al menos {value} unidades enteras para cubrir estos costes.","This quantity exceeds reliable whole-unit precision. Use a smaller planning scope before setting a whole-unit target.":"Esta cantidad supera la precisión fiable de unidades enteras. Reduce el alcance antes de fijar un objetivo entero.","Profit Per Unit is contribution before fixed costs, not net profit.":"El beneficio por unidad es contribución antes de costes fijos, no beneficio neto.","These amounts produce a result that is too large. Use smaller amounts or less extreme ratios.":"Estos importes producen un resultado demasiado grande. Usa importes menores o proporciones menos extremas.","These inputs produce amounts that are too large. Enter a smaller cost or markup percentage.":"Estos datos producen importes demasiado grandes. Introduce un coste o porcentaje de recargo menor.","These inputs produce a result that is too large. Use smaller amounts or a less extreme ratio.":"Estos datos producen un resultado demasiado grande. Usa importes menores o una proporción menos extrema.","These inputs produce a result that is too large. Use smaller amounts or a less extreme revenue-to-spend ratio.":"Estos datos producen un resultado demasiado grande. Usa importes menores o una proporción de ingresos y gasto menos extrema.","These inputs produce a result that is too large. Use smaller costs or a less extreme contribution margin.":"Estos datos producen un resultado demasiado grande. Usa costes menores o un margen de contribución menos extremo.","Revenue and cost must be finite, nonnegative numbers.":"Los ingresos y el coste deben ser números finitos no negativos.","Cost and markup percentage must be finite, zero or positive numbers.":"El coste y el porcentaje de recargo deben ser números finitos iguales o superiores a cero.","Initial investment must be zero or positive, and final return must be a finite number.":"La inversión inicial debe ser cero o positiva y el retorno final un número finito.","Advertising spend and revenue generated must be finite, zero or positive numbers.":"El gasto publicitario y los ingresos generados deben ser números finitos iguales o superiores a cero.","Fixed costs, selling price, and variable cost must be finite, zero or positive numbers.":"Los costes fijos, el precio y el coste variable deben ser números finitos iguales o superiores a cero.","{label} must be a number, such as 10000 or 10000.50. Leave out commas and currency symbols.":"{label} debe ser un número como 10000 o 10000.50. No uses separadores de miles ni símbolos monetarios.","Enter {label} to calculate your results. Try 10000 for revenue and 7000 for cost, or select the example button.":"Introduce {label} para calcular. Prueba 10000 de ingresos y 7000 de coste o selecciona el botón de ejemplo.","{label} cannot be negative. Enter zero or a positive amount; a loss is calculated when cost exceeds revenue.":"{label} no puede ser negativo. Introduce cero o un importe positivo; se calcula una pérdida si el coste supera los ingresos.","{label} must be a finite, zero or positive number. Leave out commas and currency symbols.":"{label} debe ser un número finito igual o superior a cero. No uses separadores de miles ni símbolos monetarios.","{label} must be a number. Leave out commas, currency symbols, and the percent sign.":"{label} debe ser un número. No uses separadores de miles, símbolos monetarios ni el signo de porcentaje.","Enter {label} to calculate. Try a cost of 100 and a markup of 25, or select the example button.":"Introduce {label} para calcular. Prueba un coste de 100 y un recargo de 25 o selecciona el botón de ejemplo.","{label} cannot be negative. Enter zero or a positive number.":"{label} no puede ser negativo. Introduce cero o un número positivo.","{label} must be a finite, zero or positive number. Enter 25 for a 25% markup.":"{label} debe ser un número finito igual o superior a cero. Introduce 25 para un recargo del 25%.","{label} must be a number. Leave out commas and currency symbols.":"{label} debe ser un número. No uses separadores de miles ni símbolos monetarios.","Enter {label} to calculate. Try 10000 invested and 12500 returned, or select the example button.":"Introduce {label} para calcular. Prueba 10000 de inversión y 12500 de retorno o selecciona el botón de ejemplo.","Initial investment cannot be negative. Enter zero or a positive amount. A negative final return is allowed.":"La inversión inicial no puede ser negativa. Introduce cero o un importe positivo. Se permite un retorno final negativo.","{label} must be a finite number. Use zero or a positive amount for initial investment.":"{label} debe ser un número finito. Usa cero o un importe positivo para la inversión inicial.","Enter {label} to calculate. Try 1000 in ad spend and 4000 in revenue, or select the example button.":"Introduce {label} para calcular. Prueba 1000 de publicidad y 4000 de ingresos o selecciona el botón de ejemplo.","{label} cannot be negative. Enter zero or a positive amount.":"{label} no puede ser negativo. Introduce cero o un importe positivo.","{label} must be a finite, zero or positive number.":"{label} debe ser un número finito igual o superior a cero.","Enter {label} to calculate, or select the example button.":"Introduce {label} para calcular o selecciona el botón de ejemplo."},"labels":{"Revenue":"Ingresos","revenue":"Ingresos","Cost":"Coste","cost":"Coste","Markup percentage":"Porcentaje de recargo","markup percentage":"Porcentaje de recargo","Initial investment":"Inversión inicial","initial investment":"Inversión inicial","Final return":"Retorno final","final return":"Retorno final","Advertising spend":"Gasto publicitario","advertising spend":"Gasto publicitario","Revenue generated":"Ingresos generados","revenue generated":"Ingresos generados","Fixed costs":"Costes fijos","fixed costs":"Costes fijos","Selling price per unit":"Precio de venta por unidad","selling price per unit":"Precio de venta por unidad","Variable cost per unit":"Coste variable por unidad","variable cost per unit":"Coste variable por unidad"}}</script>
+  <script src="../../assets/localization.js" defer></script>
+</head>
+<body class="business-calculator-page">
+  <a class="skip-link" href="#main-content">Saltar al contenido principal</a>
+  <header class="site-header"><div class="container header-inner">
+    <a class="brand" href="../">Calculadoras empresariales <span>gratuitas</span></a>
+    <button class="menu-toggle" type="button" aria-controls="primary-navigation" aria-expanded="false" hidden>Menú</button>
+    <nav id="primary-navigation" aria-label="Navegación principal"><a href="../">Inicio</a><a href="../#calculators">Calculadoras</a><a href="../about.html">Acerca de</a><a href="../contact.html">Contacto</a><a href="../advertising-disclosure.html">Información publicitaria</a></nav>
+    <!-- language-switcher:start -->
+    <nav class="language-switcher" aria-label="Idioma">
+      <a href="../../calculators/break-even-calculator.html" lang="en" hreflang="en">English</a>
+      <a href="../../de/calculators/break-even-calculator.html" lang="de" hreflang="de">Deutsch</a>
+      <a href="break-even-calculator.html" lang="es" hreflang="es" aria-current="page">Español</a>
+    </nav>
+    <!-- language-switcher:end -->
+  </div></header>
+  <main id="main-content" class="container">
+    <nav class="breadcrumbs" aria-label="Ruta de navegación"><ol><li><a href="../">Inicio</a></li><li><a href="../#calculators">Calculadoras</a></li><li aria-current="page">Calculadora de punto de equilibrio</li></ol></nav>
+    <section class="tool-heading"><span class="eyebrow">Calculadora empresarial</span><h1>Calculadora de punto de equilibrio</h1><p class="lead">Encuentra el volumen de ventas necesario para cubrir los costes. Calcula unidades de equilibrio, ingresos y la contribución de cada unidad a los costes fijos.</p><div class="tool-benefits"><span>Uso gratuito</span><span>Sin registro</span><span>Los cálculos se quedan en tu navegador</span></div></section>
+    <div class="tool-layout">
+      <section class="panel calculator-panel" aria-labelledby="calculator-heading">
+        <h2 id="calculator-heading">Encuentra tu punto de equilibrio</h2>
+        <p id="input-help">Usa la misma moneda y un periodo de costes coherente. Introduce importes iguales o superiores a cero sin separadores de miles ni símbolos monetarios.</p>
+        <form id="break-even-form" novalidate>
+          <div class="calculator-inputs">
+            <div class="field full-width"><label for="fixed-costs">Costes fijos</label><input id="fixed-costs" name="fixedCosts" type="number" min="0" step="any" inputmode="decimal" placeholder="10000" required aria-describedby="fixed-help input-help calculator-error"><small id="fixed-help">Costes fijos totales del periodo elegido, por ejemplo, un mes.</small></div>
+            <div class="field"><label for="selling-price">Precio de venta por unidad</label><input id="selling-price" name="sellingPrice" type="number" min="0" step="any" inputmode="decimal" placeholder="50" required aria-describedby="price-help input-help calculator-error"><small id="price-help">Los ingresos por vender una unidad.</small></div>
+            <div class="field"><label for="variable-cost">Coste variable por unidad</label><input id="variable-cost" name="variableCost" type="number" min="0" step="any" inputmode="decimal" placeholder="30" required aria-describedby="variable-help input-help calculator-error"><small id="variable-help">El coste que varía con cada unidad vendida.</small></div>
+          </div>
+          <p id="calculator-error" class="calculator-error" role="alert" hidden></p>
+          <div class="calculator-actions"><button class="button" type="submit">Calcular</button><button class="button secondary" type="reset">Restablecer</button><button id="load-break-even-example" class="example-button" type="button">Probar ejemplo: 10,000 de costes fijos / 50 de precio / 30 de coste variable</button></div>
+        </form>
+        <noscript><p>Activa JavaScript en tu navegador para usar esta calculadora.</p></noscript>
+        <section class="calculator-results" aria-labelledby="results-heading" aria-live="polite" aria-atomic="true">
+          <h2 id="results-heading">Tus resultados</h2><p id="result-prompt">Introduce los costes y el precio de venta y selecciona Calcular.</p>
+          <div id="result-details" hidden><dl class="result-grid"><div class="primary-result"><dt>Unidades de equilibrio</dt><dd id="break-even-units-result"></dd><p class="metric-help">Cantidad teórica de ventas</p></div><div><dt>Ingresos de equilibrio</dt><dd id="break-even-revenue-result"></dd><p class="metric-help">Unidades sin redondear multiplicadas por el precio</p></div><div><dt>Beneficio por unidad</dt><dd id="contribution-result"></dd><p class="metric-help">Contribución antes de costes fijos</p></div></dl><p id="result-note" class="small"></p></div>
+        </section>
+        <p class="small">Beneficio por unidad significa margen de contribución, no beneficio neto. El modelo supone un precio y un coste variable unitarios constantes.</p>
+      </section>
+      <aside class="ad" aria-label="Espacio reservado para publicidad"><span>Publicidad</span><p>Espacio publicitario reservado</p></aside>
+    </div>
+    <article class="content-page explanation">
+      <section><span class="eyebrow">Planifica tu objetivo de ventas</span><h2>¿Qué es el punto de equilibrio?</h2><p>El punto de equilibrio se alcanza cuando los ingresos totales igualan los costes del modelo. Las ventas superiores generan beneficio si cada unidad aporta un importe positivo para cubrir los costes fijos.</p><p>Esta calculadora modela un producto o una unidad representativa. Separa los costes fijos de un periodo de los costes variables de cada unidad vendida. El resultado es una estimación basada en esos supuestos.</p></section>
+      <section><h2>Fórmula del punto de equilibrio</h2><div class="panel formulas"><p><strong>Margen de contribución por unidad = Precio de venta por unidad − Coste variable por unidad</strong></p><p><strong>Unidades de equilibrio = Costes fijos / Margen de contribución por unidad</strong></p><p><strong>Ingresos de equilibrio = Unidades de equilibrio × Precio de venta por unidad</strong></p></div><p>El margen de contribución es el importe de cada venta disponible para cubrir costes fijos. Una vez cubiertos, la contribución adicional se convierte en beneficio en este modelo. El beneficio por unidad de las tarjetas usa esta definición.</p><p>La fórmula de unidades solo ofrece un objetivo de ventas positivo útil cuando el margen de contribución es positivo. Con costes fijos positivos y contribución cero o negativa, ningún volumen no negativo cubre los costes del modelo.</p></section>
+      <section><h2>Cómo calcular el punto de equilibrio</h2><ol><li><strong>Elige un periodo.</strong> Suma los costes fijos del periodo sin mezclar cifras mensuales y anuales.</li><li><strong>Introduce el precio unitario.</strong> Usa el precio aplicable a las ventas del modelo.</li><li><strong>Introduce el coste variable por unidad.</strong> Incluye los costes que varían con cada venta usando la misma base unitaria.</li><li><strong>Resta el coste variable al precio.</strong> Ese es el margen de contribución por unidad.</li><li><strong>Divide los costes fijos entre la contribución.</strong> Multiplica esa cantidad por el precio unitario para obtener los ingresos teóricos de equilibrio.</li><li><strong>Redondea hacia arriba si los productos son indivisibles.</strong> Usa el objetivo en unidades enteras de la nota y comprueba tu capacidad para alcanzarlo.</li></ol><p>Los resultados de las fórmulas muestran dos decimales. Los ingresos se calculan a partir de la cantidad sin redondear, no de las unidades mostradas redondeadas.</p></section>
+      <section><h2>Ejemplo empresarial</h2><p>Considera una tienda ilustrativa con $10,000 de costes fijos mensuales, un precio de $50 por unidad y un coste variable de $30 por unidad.</p><ul><li>Margen de contribución = $50 − $30 = <strong>$20 por unidad</strong></li><li>Unidades de equilibrio = $10,000 / $20 = <strong>500 unidades</strong></li><li>Ingresos de equilibrio = 500 × $50 = <strong>$25,000</strong></li></ul><p>Con 500 unidades, los ingresos son $25,000 y los costes son $10,000 fijos más $15,000 variables, también $25,000. Con 600 unidades, el beneficio del modelo es (600 × $20) − $10,000 = $2,000.</p><p>Si la fórmula da 500.25 unidades, un producto indivisible requiere al menos 501. La tarjeta de ingresos muestra el umbral teórico; los ingresos reales con el objetivo entero son algo superiores.</p></section>
+      <section><h2>Por qué importa el análisis del punto de equilibrio</h2><p>El análisis del punto de equilibrio convierte los supuestos de costes en un objetivo de ventas concreto. Ayuda a revisar si la demanda prevista y la capacidad de producción bastan para cubrir costes.</p><p>Cambiar el precio, los costes variables o los fijos cambia el umbral. Compara escenarios con supuestos coherentes. El cálculo no prevé demanda, cambios en la mezcla de ventas ni cuándo se cobra o se paga.</p></section>
+      <section><h2>Errores comunes</h2><ul><li><strong>Confundir contribución con beneficio neto.</strong> Cada unidad debe contribuir a cubrir los costes fijos antes de que la empresa del modelo obtenga beneficio.</li><li><strong>Mezclar periodos de costes.</strong> Los objetivos de ventas mensuales necesitan los costes fijos del mismo mes.</li><li><strong>Usar el coste variable total como coste unitario.</strong> Divide correctamente antes de introducir la cifra por unidad.</li><li><strong>Omitir o duplicar costes.</strong> Clasifica cada gasto incluido de forma coherente.</li><li><strong>Ignorar la contribución cero o negativa.</strong> Más ventas no cubren costes fijos positivos si cada unidad no aporta nada o aumenta la pérdida.</li><li><strong>Redondear hacia abajo un objetivo fraccionario.</strong> Los productos enteros requieren una cantidad redondeada hacia arriba a partir del resultado sin redondear.</li><li><strong>Suponer que los costes y la mezcla de ventas nunca cambian.</strong> Los descuentos por volumen, los límites de capacidad y la mezcla de productos pueden cambiar los supuestos.</li></ul></section>
+      <section class="faq" aria-labelledby="faq-heading"><h2 id="faq-heading">Preguntas frecuentes</h2>
+        <details><summary>¿Qué es el punto de equilibrio?</summary><p>Es el volumen de ventas en el que los ingresos totales igualan los costes fijos y variables incluidos en el análisis. En ese volumen, el beneficio total del modelo es cero.</p></details>
+        <details><summary>¿Cómo calculo las unidades del punto de equilibrio?</summary><p>Resta el coste variable por unidad al precio de venta por unidad y divide los costes fijos entre ese margen de contribución. La fórmula requiere un margen de contribución positivo para ofrecer un objetivo de ventas útil.</p></details>
+        <details><summary>¿Qué se considera coste fijo?</summary><p>Los costes fijos no varían con el volumen de ventas dentro del rango y periodo del modelo, como un alquiler mensual o una suscripción fija de software. Clasifica los costes de tu empresa de forma coherente.</p></details>
+        <details><summary>¿Qué se considera coste variable por unidad?</summary><p>Los costes variables cambian con las unidades vendidas. Pueden incluir materiales, embalaje o comisiones por venta. Usa el coste variable de una unidad, no el total de todas.</p></details>
+        <details><summary>¿El beneficio por unidad equivale al beneficio neto?</summary><p>No. Aquí significa precio de venta menos coste variable por unidad, también llamado margen de contribución por unidad. Ese importe ayuda a cubrir costes fijos antes de generar beneficio empresarial.</p></details>
+        <details><summary>¿Qué ocurre si el margen de contribución es cero?</summary><p>Con costes fijos positivos, las ventas no pueden cubrirlos porque cada unidad aporta cero. Las unidades y los ingresos de equilibrio muestran N/A. Si los costes fijos también son cero, el modelo está en equilibrio con cero ventas y con cualquier volumen de ventas.</p></details>
+        <details><summary>¿Qué ocurre si el margen de contribución es negativo?</summary><p>Cada venta aumenta la pérdida del modelo. Con costes fijos positivos, no existe un volumen de equilibrio no negativo. Si los costes fijos son cero, cero ventas es el punto de equilibrio, pero cualquier venta genera pérdidas.</p></details>
+        <details><summary>¿Debo redondear hacia arriba las unidades de equilibrio?</summary><p>Para productos indivisibles, redondea el resultado sin redondear de la fórmula hacia arriba a una unidad entera. El resultado principal muestra la cantidad teórica y la nota muestra el objetivo en unidades enteras. Los ingresos de equilibrio usan la cantidad teórica sin redondear.</p></details>
+        <details><summary>¿Qué ocurre si los costes fijos son cero?</summary><p>Cero ventas cubren cero costes fijos, por lo que las unidades y los ingresos de equilibrio son cero. Un margen de contribución positivo hace rentable cada venta adicional; uno negativo convierte cada venta adicional en pérdida.</p></details>
+        <details><summary>¿Puedo usarla para varios productos?</summary><p>Esta calculadora modela un producto o una unidad representativa. Los productos con diferentes precios y costes variables requieren un margen de contribución ponderado según una mezcla de ventas prevista. Cambiar esa mezcla cambia el resultado.</p></details>
+        <details><summary>¿Qué periodo y moneda debo usar?</summary><p>Usa costes fijos de un periodo coherente y cifras unitarias aplicables a sus ventas. Todos los importes deben usar la misma moneda. Los ingresos y el margen de contribución se expresan en esa moneda.</p></details>
+        <details><summary>¿Se guardan mis datos o se envían a un servidor?</summary><p>Los cálculos se ejecutan en tu navegador. La calculadora no envía datos a un servidor ni los guarda en una base de datos o en el almacenamiento del navegador. Restablecer vacía el formulario.</p></details>
+      </section><a class="text-link" href="../#calculators">Ver todas las calculadoras -&gt;</a>
+    </article>
+  </main>
+  <footer class="site-footer"><div class="container footer-inner">
+    <div><p class="brand">Calculadoras empresariales gratuitas</p><p>Herramientas claras para las decisiones empresariales diarias.</p></div>
+    <nav aria-label="Navegación del pie de página"><a href="../about.html">Acerca de</a><a href="../contact.html">Contacto</a><a href="../privacy-policy.html">Política de privacidad</a><a href="../terms.html">Condiciones de uso</a><a href="../advertising-disclosure.html">Información publicitaria</a></nav>
+    <p class="disclaimer">Solo para información general. Las estimaciones no sustituyen asesoramiento financiero, fiscal, de inversión ni jurídico.</p>
+    <p class="copyright">&copy; <span data-year>2026</span> Calculadoras empresariales gratuitas. Todos los derechos reservados.</p>
+  </div></footer>
+</body>
+</html>

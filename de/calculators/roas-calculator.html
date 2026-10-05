@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ROAS-Rechner - Kostenloses Werkzeug für Werberendite</title>
+  <meta name="description" content="ROAS-Verhältnis, ROAS-Prozentsatz und Umsatz minus Werbeausgaben berechnen. Kostenloser Werberechner mit Beispielen, Vergleichswerten, Formeln und Fragen.">
+  <meta name="theme-color" content="#153a56">
+  <link rel="icon" href="../../assets/favicon.ico" type="image/x-icon" sizes="16x16 32x32 48x48 64x64">
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml" sizes="any">
+  <link rel="stylesheet" href="../../style.css">
+  <script src="../../script.js" defer></script>
+  <script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Was bedeutet ROAS?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "ROAS steht für Return on Advertising Spend. Es vergleicht den der Werbung zugeordneten Umsatz mit den Ausgaben für diese Anzeigen."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Wie berechne ich ROAS?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Teilen Sie den erzielten Umsatz durch die Werbeausgaben. 4000 Umsatz bei 1000 Ausgaben ergibt ein ROAS-Verhältnis von 4, angezeigt als 4.00x oder 4.00:1, und 400% ROAS."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Was ist ein guter ROAS?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Es gibt keinen universellen Zielwert. Ein sinnvoller Maßstab hängt von Deckungsbeitrag, Kosten, Attribution und Geschäftszielen ab. Vergleichen Sie einheitlich gemessene eigene Kampagnen und den zur Deckung aller relevanten Kosten nötigen Umsatz."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Bedeutet ROAS von 1, dass ich Break-even erreiche?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "1.00x ROAS bedeutet, dass zugeordneter Umsatz den Werbeausgaben entspricht. Es deckt nur Werbung; Produktkosten, Gebühren, Versand und Gemeinkosten können weiterhin Verlust verursachen."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Was passiert bei Werbeausgaben von null?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "ROAS-Verhältnis und -Prozentsatz sind undefiniert, weil die Formel durch Werbeausgaben teilt. Beide zeigen N/A; Umsatz minus Werbeausgaben wird weiterhin berechnet."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Was passiert bei erzieltem Umsatz von null?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Bei positiven Werbeausgaben ergibt null Umsatz 0.00x und 0.00% ROAS. Der Gewinn nach dieser nur Werbung berücksichtigenden Formel entspricht den negativen Werbeausgaben."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Was bedeutet ein ROAS unter 1?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Der zugeordnete Umsatz ist geringer als die Werbeausgaben. 500 Umsatz aus 1000 Ausgaben ergibt 0.50x ROAS, 50% ROAS und 500 Verlust vor weiteren Kosten."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Ist der ROAS-Prozentsatz dasselbe wie der ROI-Prozentsatz?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Nein. ROAS teilt Umsatz durch Werbeausgaben, ROI Gewinn durch Investition. Wenn Werbung die einzigen Kosten sind, entsprechen 400% ROAS 300% ROI. Weitere Kosten verändern ROI."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Enthält das Gewinnergebnis alle Ausgaben?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Nein. Dieser Rechner verwendet Gewinn = erzielter Umsatz minus Werbeausgaben. Produktkosten, Gebühren, Steuern, Versand und Gemeinkosten sind ausgeschlossen; das Ergebnis ist kein Nettogewinn."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Welchen Umsatz sollte ich eingeben?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Verwenden Sie den der bewerteten Werbung zugeordneten Umsatz mit einheitlichem Berichtszeitraum und Attributionsfenster. Behandeln Sie Erstattungen und Stornierungen konsistent. Setzen Sie nicht automatisch den gesamten Unternehmensumsatz ein."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Kann ich jede Währung verwenden?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ja. Verwenden Sie dieselbe Währung für Ausgaben und Umsatz. Gewinn wird darin ausgedrückt, ROAS als Verhältnis oder Prozentsatz. Der Rechner rechnet keine Währungen um."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Werden meine Kampagnendaten gespeichert oder an einen Server gesendet?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Berechnungen laufen im Browser. Der Rechner überträgt keine Eingaben an einen Server und speichert sie weder in einer Datenbank noch im Browserspeicher. Zurücksetzen leert das Formular."
+        }
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Startseite",
+        "item": "https://bizcalchub.top/de/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Rechner",
+        "item": "https://bizcalchub.top/de/#calculators"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "ROAS-Rechner"
+      }
+    ]
+  }
+]
+</script>
+  <!-- multilingual-seo:start -->
+  <link rel="canonical" href="https://bizcalchub.top/de/calculators/roas-calculator.html">
+  <link rel="alternate" hreflang="en" href="https://bizcalchub.top/calculators/roas-calculator.html">
+  <link rel="alternate" hreflang="de" href="https://bizcalchub.top/de/calculators/roas-calculator.html">
+  <link rel="alternate" hreflang="es" href="https://bizcalchub.top/es/calculators/roas-calculator.html">
+  <link rel="alternate" hreflang="x-default" href="https://bizcalchub.top/calculators/roas-calculator.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://bizcalchub.top/de/calculators/roas-calculator.html">
+  <meta property="og:title" content="ROAS-Rechner - Kostenloses Werkzeug für Werberendite">
+  <meta property="og:description" content="ROAS-Verhältnis, ROAS-Prozentsatz und Umsatz minus Werbeausgaben berechnen. Kostenloser Werberechner mit Beispielen, Vergleichswerten, Formeln und Fragen.">
+  <meta property="og:site_name" content="Kostenlose Business-Rechner">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:locale:alternate" content="es_ES">
+  <!-- multilingual-seo:end -->
+  <script type="application/json" id="calculator-translations">{"messages":{"Profit is in the same currency as your inputs. Results are rounded to two decimal places.":"Gewinn verwendet dieselbe Währung wie Ihre Eingaben. Ergebnisse werden auf zwei Dezimalstellen gerundet.","Your costs exceed your revenue, resulting in a loss.":"Ihre Kosten übersteigen den Umsatz; es entsteht ein Verlust.","Profit margin is undefined because revenue is zero.":"Die Gewinnmarge ist undefiniert, weil der Umsatz null ist.","Markup is undefined because cost is zero.":"Der Aufschlag ist undefiniert, weil die Kosten null sind.","Profit and selling price use the same currency as your cost. Results are rounded to two decimal places.":"Gewinn und Verkaufspreis verwenden Ihre Kostenwährung. Ergebnisse werden auf zwei Dezimalstellen gerundet.","Profit margin is undefined because selling price is zero.":"Die Gewinnmarge ist undefiniert, weil der Verkaufspreis null ist.","Expenses excluded from your cost are not included in this profit amount.":"Nicht in den Kosten enthaltene Ausgaben sind in diesem Gewinnbetrag nicht berücksichtigt.","Profit uses the same currency as your inputs. Results are rounded to two decimal places.":"Gewinn verwendet Ihre Eingabewährung. Ergebnisse werden auf zwei Dezimalstellen gerundet.","Final return is below initial investment, resulting in a loss.":"Der Endwert liegt unter der Anfangsinvestition; es entsteht ein Verlust.","ROI is undefined because initial investment is zero.":"ROI ist undefiniert, weil die Anfangsinvestition null ist.","Final return equals initial investment: the investment breaks even.":"Der Endwert entspricht der Anfangsinvestition: Die Investition erreicht Break-even.","This is simple ROI for your chosen period, not an annualized return.":"Dies ist einfacher ROI für Ihren Zeitraum, keine annualisierte Rendite.","Profit uses your input currency and subtracts advertising spend only. Other business costs are excluded. Results are rounded to two decimal places.":"Gewinn verwendet Ihre Eingabewährung und zieht nur Werbeausgaben ab. Weitere Geschäftskosten sind ausgeschlossen. Ergebnisse werden auf zwei Dezimalstellen gerundet.","ROAS ratio and percentage are undefined because advertising spend is zero.":"ROAS-Verhältnis und -Prozentsatz sind undefiniert, weil die Werbeausgaben null sind.","Each unit of ad spend generated {value} units of attributed revenue.":"Jede Einheit Werbeausgaben erzeugte {value} Einheiten zugeordneten Umsatz.","Revenue is below ad spend, resulting in a loss before other costs.":"Umsatz liegt unter den Werbeausgaben; vor weiteren Kosten entsteht Verlust.","Revenue covers ad spend only; other costs still need to be covered.":"Umsatz deckt nur Werbeausgaben; weitere Kosten müssen noch gedeckt werden.","Revenue and contribution use your input currency. Results are rounded to two decimal places; revenue uses the unrounded theoretical unit quantity.":"Umsatz und Deckungsbeitrag verwenden Ihre Eingabewährung. Ergebnisse werden auf zwei Dezimalstellen gerundet; Umsatz verwendet die ungerundete theoretische Menge.","Contribution margin is zero. Sales contribute nothing toward positive fixed costs, so there is no break even sales target.":"Der Deckungsbeitrag ist null. Verkäufe tragen nichts zur Deckung positiver Fixkosten bei; es gibt kein Break-even-Absatzziel.","Contribution margin is negative. Each sale increases the loss, so no nonnegative sales volume covers positive fixed costs.":"Der Deckungsbeitrag ist negativ. Jeder Verkauf erhöht den Verlust; keine nichtnegative Absatzmenge deckt positive Fixkosten.","With zero fixed costs, zero sales is the break even point.":"Bei Fixkosten von null ist null Absatz der Break-even-Punkt.","Any positive sales volume creates a loss because contribution margin is negative.":"Jeder positive Absatz erzeugt Verlust, weil der Deckungsbeitrag negativ ist.","With zero contribution margin, all sales volumes also break even in this model.":"Bei Deckungsbeitrag null erreichen in diesem Modell alle Absatzmengen Break-even.","For indivisible products, sell at least {value} whole units to cover these costs.":"Verkaufen Sie bei unteilbaren Produkten mindestens {value} ganze Einheiten zur Kostendeckung.","This quantity exceeds reliable whole-unit precision. Use a smaller planning scope before setting a whole-unit target.":"Diese Menge überschreitet die verlässliche Ganzzahlgenauigkeit. Verkleinern Sie den Planungsumfang vor Festlegung des Ganzzahlziels.","Profit Per Unit is contribution before fixed costs, not net profit.":"Gewinn pro Einheit ist Deckungsbeitrag vor Fixkosten, nicht Nettogewinn.","These amounts produce a result that is too large. Use smaller amounts or less extreme ratios.":"Diese Beträge erzeugen ein zu großes Ergebnis. Verwenden Sie kleinere Beträge oder weniger extreme Verhältnisse.","These inputs produce amounts that are too large. Enter a smaller cost or markup percentage.":"Diese Eingaben erzeugen zu große Beträge. Geben Sie niedrigere Kosten oder einen kleineren Aufschlag ein.","These inputs produce a result that is too large. Use smaller amounts or a less extreme ratio.":"Diese Eingaben erzeugen ein zu großes Ergebnis. Verwenden Sie kleinere Beträge oder ein weniger extremes Verhältnis.","These inputs produce a result that is too large. Use smaller amounts or a less extreme revenue-to-spend ratio.":"Diese Eingaben erzeugen ein zu großes Ergebnis. Verwenden Sie kleinere Beträge oder ein weniger extremes Verhältnis von Umsatz zu Ausgaben.","These inputs produce a result that is too large. Use smaller costs or a less extreme contribution margin.":"Diese Eingaben erzeugen ein zu großes Ergebnis. Verwenden Sie kleinere Kosten oder einen weniger extremen Deckungsbeitrag.","Revenue and cost must be finite, nonnegative numbers.":"Umsatz und Kosten müssen endliche, nichtnegative Zahlen sein.","Cost and markup percentage must be finite, zero or positive numbers.":"Kosten und Aufschlag müssen endliche Zahlen von null oder darüber sein.","Initial investment must be zero or positive, and final return must be a finite number.":"Die Anfangsinvestition muss null oder positiv und der Endwert eine endliche Zahl sein.","Advertising spend and revenue generated must be finite, zero or positive numbers.":"Werbeausgaben und erzielter Umsatz müssen endliche Zahlen von null oder darüber sein.","Fixed costs, selling price, and variable cost must be finite, zero or positive numbers.":"Fixkosten, Verkaufspreis und variable Kosten müssen endliche Zahlen von null oder darüber sein.","{label} must be a number, such as 10000 or 10000.50. Leave out commas and currency symbols.":"{label} muss eine Zahl wie 10000 oder 10000.50 sein. Verwenden Sie keine Tausendertrennzeichen oder Währungssymbole.","Enter {label} to calculate your results. Try 10000 for revenue and 7000 for cost, or select the example button.":"Geben Sie {label} zur Berechnung ein. Testen Sie 10000 Umsatz und 7000 Kosten oder wählen Sie die Beispielschaltfläche.","{label} cannot be negative. Enter zero or a positive amount; a loss is calculated when cost exceeds revenue.":"{label} darf nicht negativ sein. Geben Sie null oder einen positiven Betrag ein; ein Verlust entsteht, wenn Kosten den Umsatz übersteigen.","{label} must be a finite, zero or positive number. Leave out commas and currency symbols.":"{label} muss eine endliche Zahl von null oder darüber sein. Verwenden Sie keine Tausendertrennzeichen oder Währungssymbole.","{label} must be a number. Leave out commas, currency symbols, and the percent sign.":"{label} muss eine Zahl sein. Verwenden Sie keine Tausendertrennzeichen, Währungssymbole oder Prozentzeichen.","Enter {label} to calculate. Try a cost of 100 and a markup of 25, or select the example button.":"Geben Sie {label} zur Berechnung ein. Testen Sie 100 Kosten und 25 Aufschlag oder wählen Sie die Beispielschaltfläche.","{label} cannot be negative. Enter zero or a positive number.":"{label} darf nicht negativ sein. Geben Sie null oder eine positive Zahl ein.","{label} must be a finite, zero or positive number. Enter 25 for a 25% markup.":"{label} muss eine endliche Zahl von null oder darüber sein. Geben Sie 25 für 25% Aufschlag ein.","{label} must be a number. Leave out commas and currency symbols.":"{label} muss eine Zahl sein. Verwenden Sie keine Tausendertrennzeichen oder Währungssymbole.","Enter {label} to calculate. Try 10000 invested and 12500 returned, or select the example button.":"Geben Sie {label} zur Berechnung ein. Testen Sie 10000 Investition und 12500 Endwert oder wählen Sie die Beispielschaltfläche.","Initial investment cannot be negative. Enter zero or a positive amount. A negative final return is allowed.":"Die Anfangsinvestition darf nicht negativ sein. Geben Sie null oder einen positiven Betrag ein. Ein negativer Endwert ist erlaubt.","{label} must be a finite number. Use zero or a positive amount for initial investment.":"{label} muss eine endliche Zahl sein. Verwenden Sie null oder einen positiven Betrag für die Anfangsinvestition.","Enter {label} to calculate. Try 1000 in ad spend and 4000 in revenue, or select the example button.":"Geben Sie {label} zur Berechnung ein. Testen Sie 1000 Werbeausgaben und 4000 Umsatz oder wählen Sie die Beispielschaltfläche.","{label} cannot be negative. Enter zero or a positive amount.":"{label} darf nicht negativ sein. Geben Sie null oder einen positiven Betrag ein.","{label} must be a finite, zero or positive number.":"{label} muss eine endliche Zahl von null oder darüber sein.","Enter {label} to calculate, or select the example button.":"Geben Sie {label} zur Berechnung ein oder wählen Sie die Beispielschaltfläche."},"labels":{"Revenue":"Umsatz","revenue":"Umsatz","Cost":"Kosten","cost":"Kosten","Markup percentage":"Aufschlagsprozentsatz","markup percentage":"Aufschlagsprozentsatz","Initial investment":"Anfangsinvestition","initial investment":"Anfangsinvestition","Final return":"Endwert","final return":"Endwert","Advertising spend":"Werbeausgaben","advertising spend":"Werbeausgaben","Revenue generated":"Erzielter Umsatz","revenue generated":"Erzielter Umsatz","Fixed costs":"Fixkosten","fixed costs":"Fixkosten","Selling price per unit":"Verkaufspreis pro Einheit","selling price per unit":"Verkaufspreis pro Einheit","Variable cost per unit":"Variable Kosten pro Einheit","variable cost per unit":"Variable Kosten pro Einheit"}}</script>
+  <script src="../../assets/localization.js" defer></script>
+</head>
+<body class="business-calculator-page">
+  <a class="skip-link" href="#main-content">Zum Hauptinhalt springen</a>
+  <header class="site-header"><div class="container header-inner">
+    <a class="brand" href="../">Kostenlose Business- <span>Rechner</span></a>
+    <button class="menu-toggle" type="button" aria-controls="primary-navigation" aria-expanded="false" hidden>Menü</button>
+    <nav id="primary-navigation" aria-label="Hauptnavigation"><a href="../">Startseite</a><a href="../#calculators">Rechner</a><a href="../about.html">Über uns</a><a href="../contact.html">Kontakt</a><a href="../advertising-disclosure.html">Werbehinweise</a></nav>
+    <!-- language-switcher:start -->
+    <nav class="language-switcher" aria-label="Sprache">
+      <a href="../../calculators/roas-calculator.html" lang="en" hreflang="en">English</a>
+      <a href="roas-calculator.html" lang="de" hreflang="de" aria-current="page">Deutsch</a>
+      <a href="../../es/calculators/roas-calculator.html" lang="es" hreflang="es">Español</a>
+    </nav>
+    <!-- language-switcher:end -->
+  </div></header>
+  <main id="main-content" class="container">
+    <nav class="breadcrumbs" aria-label="Brotkrumennavigation"><ol><li><a href="../">Startseite</a></li><li><a href="../#calculators">Rechner</a></li><li aria-current="page">ROAS-Rechner</li></ol></nav>
+    <section class="tool-heading"><span class="eyebrow">Marketing-Rechner</span><h1>ROAS-Rechner</h1><p class="lead">Sehen Sie den Werbeumsatz je ausgegebenem Dollar. Berechnen Sie ROAS als Verhältnis und Prozentsatz sowie den Umsatz nach Abzug der Werbeausgaben.</p><div class="tool-benefits"><span>Kostenlos nutzbar</span><span>Keine Anmeldung nötig</span><span>Berechnungen bleiben in Ihrem Browser</span></div></section>
+    <div class="tool-layout">
+      <section class="panel calculator-panel" aria-labelledby="calculator-heading">
+        <h2 id="calculator-heading">Ihre Werberendite messen</h2>
+        <p id="input-help">Verwenden Sie dieselbe Währung und einen einheitlichen Kampagnenzeitraum. Geben Sie null oder positive Beträge ohne Tausendertrennzeichen und Währungssymbole ein.</p>
+        <form id="roas-form" novalidate>
+          <div class="calculator-inputs">
+            <div class="field"><label for="advertising-spend">Werbeausgaben</label><input id="advertising-spend" name="spend" type="number" min="0" step="any" inputmode="decimal" placeholder="1000" required aria-describedby="spend-help input-help calculator-error"><small id="spend-help">Werbeausgaben für die betrachtete Kampagne oder den Zeitraum.</small></div>
+            <div class="field"><label for="revenue-generated">Erzielter Umsatz</label><input id="revenue-generated" name="revenue" type="number" min="0" step="any" inputmode="decimal" placeholder="4000" required aria-describedby="revenue-help input-help calculator-error"><small id="revenue-help">Diesen Anzeigen zugeordneter Umsatz mit einheitlichem Attributionsfenster.</small></div>
+          </div>
+          <p id="calculator-error" class="calculator-error" role="alert" hidden></p>
+          <div class="calculator-actions"><button class="button" type="submit">Berechnen</button><button class="button secondary" type="reset">Zurücksetzen</button><button id="load-roas-example" class="example-button" type="button">Beispiel testen: 1,000 Werbeausgaben / 4,000 Umsatz</button></div>
+        </form>
+        <noscript><p>Aktivieren Sie JavaScript in Ihrem Browser, um diesen Rechner zu nutzen.</p></noscript>
+        <section class="calculator-results" aria-labelledby="results-heading" aria-live="polite" aria-atomic="true">
+          <h2 id="results-heading">Ihre Ergebnisse</h2><p id="result-prompt">Geben Sie Werbeausgaben und erzielten Umsatz ein und wählen Sie Berechnen.</p>
+          <div id="result-details" hidden><dl class="result-grid"><div class="primary-result"><dt>ROAS-Verhältnis</dt><dd id="roas-ratio-result"></dd><p class="metric-help">Umsatz pro Einheit Werbeausgaben</p></div><div><dt>ROAS-Prozentsatz</dt><dd id="roas-percentage-result"></dd><p class="metric-help">ROAS-Verhältnis mal 100</p></div><div><dt>Gewinn</dt><dd id="roas-profit-result"></dd><p class="metric-help">Umsatz minus ausschließlich Werbeausgaben</p></div></dl><p id="result-note" class="small"></p></div>
+        </section>
+        <p class="small">Gewinn schließt hier Produktkosten, Gebühren, Steuern und Gemeinkosten aus. Es ist kein Nettogewinn des Unternehmens.</p>
+      </section>
+      <aside class="ad" aria-label="Werbeplatzhalter"><span>Werbung</span><p>Reservierte Werbefläche</p></aside>
+    </div>
+    <article class="content-page explanation">
+      <section><span class="eyebrow">Kampagnenleistung verstehen</span><h2>Was ist ROAS?</h2><p>Return on Advertising Spend misst zugeordneten Werbeumsatz relativ zu Werbeausgaben. 4.00x ROAS, auch 4.00:1, bedeutet vier Einheiten Umsatz je Einheit Werbeausgaben.</p><p>ROAS misst Umsatzeffizienz. Es zieht Herstellungs- oder Lieferkosten nicht ab. Ein starkes Verhältnis allein belegt daher keine Gesamtrentabilität.</p></section>
+      <section><h2>ROAS-Formel</h2><div class="panel formulas"><p><strong>ROAS-Verhältnis = Erzielter Umsatz / Werbeausgaben</strong></p><p><strong>ROAS-Prozentsatz = ROAS-Verhältnis × 100</strong></p><p><strong>Gewinn = Erzielter Umsatz − Werbeausgaben</strong></p></div><p>Verhältnis und Prozentsatz beschreiben dieselbe Beziehung: 4.00x entspricht 400%. Das Gewinnergebnis folgt der obigen Formel und enthält nur Werbeausgaben als Kosten. Bei Werbeausgaben von null sind beide ROAS-Kennzahlen undefiniert.</p><p>Zur Einordnung: <a href="https://support.google.com/google-ads/answer/6268637?hl=de">Google Ads erläutert Ziel-ROAS</a> anhand des Conversion-Werts relativ zu Kosten und als Prozentsatz. Dieser Rechner verwendet Ihren eingegebenen Umsatz als Wert.</p></section>
+      <section><h2>So berechnen Sie ROAS</h2><ol><li><strong>Kampagne und Zeitraum wählen.</strong> Verwenden Sie einen einheitlichen Berichtsrahmen für verglichene Zahlen.</li><li><strong>Werbeausgaben sammeln.</strong> Geben Sie die zugehörigen Werbeausgaben ein.</li><li><strong>Zugeordneten Umsatz sammeln.</strong> Verwenden Sie Kampagnenumsatz mit einheitlichem Attributionsfenster und Erstattungsverfahren.</li><li><strong>Umsatz durch Ausgaben teilen.</strong> Das ergibt das Verhältnis. Für den Prozentsatz multiplizieren Sie mit 100.</li><li><strong>Kosten außerhalb der Werbung prüfen.</strong> Vergleichen Sie das Ergebnis mit Deckungsbeitrag und weiteren Geschäftsausgaben.</li></ol><p>Beträge müssen dieselbe Währung verwenden. Ergebnisse zeigen zwei Dezimalstellen; Berechnungen verwenden ursprüngliche Eingaben.</p></section>
+      <section><h2>ROAS-Beispiel</h2><p>Eine beispielhafte Kampagne gibt $1,000 aus und erzielt $4,000 zugeordneten Umsatz. Die Zahlen dienen der Veranschaulichung.</p><ul><li>ROAS-Verhältnis = $4,000 / $1,000 = <strong>4.00x (4.00:1)</strong></li><li>ROAS-Prozentsatz = 4 × 100 = <strong>400.00%</strong></li><li>Gewinn vor weiteren Kosten = $4,000 − $1,000 = <strong>$3,000</strong></li></ul><p>Erzeugen dieselben Ausgaben nur $500 Umsatz, sinkt ROAS auf 0.50x oder 50%, und Umsatz minus Werbung ist -$500. Entspricht Umsatz den Ausgaben, beträgt ROAS 1.00x und der nur Werbung berücksichtigende Gewinn null.</p></section>
+      <section><h2>Sinnvolle ROAS-Vergleichswerte</h2><p>Ein sinnvoller Maßstab beginnt mit Ihren wirtschaftlichen Bedingungen. Kein universelles Verhältnis macht jede Kampagne profitabel. Produktkosten, Gebühren, Versand, Gemeinkosten und Messverfahren beeinflussen den nötigen Umsatz.</p><p>Vereinfachtes Planungsbeispiel: Bleiben nach variablen Kosten außerhalb der Werbung 25% des Umsatzes, beträgt der zur Werbekostendeckung nötige ROAS 1 / 0.25 = <strong>4.00x</strong>. Bei 50% Deckungsbeitragsmarge beträgt die Schwelle <strong>2.00x</strong>. Dies sind mathematische Beispiele, keine Branchenmaßstäbe. Sie schließen Fixkosten aus und setzen eine gleichbleibende Deckungsbeitragsmarge voraus.</p><p>Vergleichen Sie Kampagnen mit demselben Attributionsfenster und derselben Umsatzdefinition. Prüfen Sie Rentabilität und Umfang zusammen mit dem Verhältnis, statt einen Zielwert nur anhand einer Schlagzeile zu wählen.</p></section>
+      <section><h2>Unterschied zwischen ROAS und ROI</h2><p>ROAS vergleicht Umsatz mit Werbeausgaben. ROI vergleicht Gewinn oder Verlust mit der dafür nötigen Investition. Zähler und Kostenumfang können sich unterscheiden.</p><div class="table-scroll" role="region" aria-label="Vergleich von ROAS und ROI" tabindex="0"><table><caption>$4,000 Umsatz und $1,000 Werbeausgaben, ohne weitere Kosten</caption><thead><tr><th scope="col">Kennzahl</th><th scope="col">ROAS</th><th scope="col">ROI</th></tr></thead><tbody><tr><th scope="row">Zähler</th><td>Umsatz: $4,000</td><td>Gewinn: $3,000</td></tr><tr><th scope="row">Nenner in diesem Beispiel</th><td>Werbeausgaben: $1,000</td><td>Investition: $1,000</td></tr><tr><th scope="row">Ergebnis</th><td>4.00x oder 400%</td><td>300%</td></tr></tbody></table></div><p>Nur wenn Werbung die einzigen berücksichtigten Kosten sind, entspricht ROI dem ROAS-Prozentsatz minus 100 Prozentpunkte. Für umfassendere Investitionsanalyse verwenden Sie den <a href="roi-calculator.html">ROI-Rechner</a> mit klar definiertem Kosten- und Ertragsumfang.</p></section>
+      <section><h2>Warum ROAS für Werbung wichtig ist</h2><p>ROAS hilft Marketingteams, zugeordneten Umsatz mit Kampagnenausgaben zu vergleichen. Es zeigt Änderungen der Umsatzeffizienz bei neuen Zielgruppen, Anzeigen und Budgets.</p><p>Lesen Sie ROAS zusammen mit Gesamtumsatz, Gewinn, Conversion-Volumen und Attributionsqualität. Gemeldete Attribution beweist nicht, dass jeder Verkauf durch Werbung entstand. Ein hohes Verhältnis bei kleinem Budget garantiert dasselbe bei größerem Budget nicht.</p></section>
+      <section class="faq" aria-labelledby="faq-heading"><h2 id="faq-heading">Häufig gestellte Fragen</h2>
+        <details><summary>Was bedeutet ROAS?</summary><p>ROAS steht für Return on Advertising Spend. Es vergleicht den der Werbung zugeordneten Umsatz mit den Ausgaben für diese Anzeigen.</p></details>
+        <details><summary>Wie berechne ich ROAS?</summary><p>Teilen Sie den erzielten Umsatz durch die Werbeausgaben. 4000 Umsatz bei 1000 Ausgaben ergibt ein ROAS-Verhältnis von 4, angezeigt als 4.00x oder 4.00:1, und 400% ROAS.</p></details>
+        <details><summary>Was ist ein guter ROAS?</summary><p>Es gibt keinen universellen Zielwert. Ein sinnvoller Maßstab hängt von Deckungsbeitrag, Kosten, Attribution und Geschäftszielen ab. Vergleichen Sie einheitlich gemessene eigene Kampagnen und den zur Deckung aller relevanten Kosten nötigen Umsatz.</p></details>
+        <details><summary>Bedeutet ROAS von 1, dass ich Break-even erreiche?</summary><p>1.00x ROAS bedeutet, dass zugeordneter Umsatz den Werbeausgaben entspricht. Es deckt nur Werbung; Produktkosten, Gebühren, Versand und Gemeinkosten können weiterhin Verlust verursachen.</p></details>
+        <details><summary>Was passiert bei Werbeausgaben von null?</summary><p>ROAS-Verhältnis und -Prozentsatz sind undefiniert, weil die Formel durch Werbeausgaben teilt. Beide zeigen N/A; Umsatz minus Werbeausgaben wird weiterhin berechnet.</p></details>
+        <details><summary>Was passiert bei erzieltem Umsatz von null?</summary><p>Bei positiven Werbeausgaben ergibt null Umsatz 0.00x und 0.00% ROAS. Der Gewinn nach dieser nur Werbung berücksichtigenden Formel entspricht den negativen Werbeausgaben.</p></details>
+        <details><summary>Was bedeutet ein ROAS unter 1?</summary><p>Der zugeordnete Umsatz ist geringer als die Werbeausgaben. 500 Umsatz aus 1000 Ausgaben ergibt 0.50x ROAS, 50% ROAS und 500 Verlust vor weiteren Kosten.</p></details>
+        <details><summary>Ist der ROAS-Prozentsatz dasselbe wie der ROI-Prozentsatz?</summary><p>Nein. ROAS teilt Umsatz durch Werbeausgaben, ROI Gewinn durch Investition. Wenn Werbung die einzigen Kosten sind, entsprechen 400% ROAS 300% ROI. Weitere Kosten verändern ROI.</p></details>
+        <details><summary>Enthält das Gewinnergebnis alle Ausgaben?</summary><p>Nein. Dieser Rechner verwendet Gewinn = erzielter Umsatz minus Werbeausgaben. Produktkosten, Gebühren, Steuern, Versand und Gemeinkosten sind ausgeschlossen; das Ergebnis ist kein Nettogewinn.</p></details>
+        <details><summary>Welchen Umsatz sollte ich eingeben?</summary><p>Verwenden Sie den der bewerteten Werbung zugeordneten Umsatz mit einheitlichem Berichtszeitraum und Attributionsfenster. Behandeln Sie Erstattungen und Stornierungen konsistent. Setzen Sie nicht automatisch den gesamten Unternehmensumsatz ein.</p></details>
+        <details><summary>Kann ich jede Währung verwenden?</summary><p>Ja. Verwenden Sie dieselbe Währung für Ausgaben und Umsatz. Gewinn wird darin ausgedrückt, ROAS als Verhältnis oder Prozentsatz. Der Rechner rechnet keine Währungen um.</p></details>
+        <details><summary>Werden meine Kampagnendaten gespeichert oder an einen Server gesendet?</summary><p>Berechnungen laufen im Browser. Der Rechner überträgt keine Eingaben an einen Server und speichert sie weder in einer Datenbank noch im Browserspeicher. Zurücksetzen leert das Formular.</p></details>
+      </section><a class="text-link" href="../#calculators">Alle Rechner ansehen -&gt;</a>
+    </article>
+  </main>
+  <footer class="site-footer"><div class="container footer-inner">
+    <div><p class="brand">Kostenlose Business-Rechner</p><p>Klare Werkzeuge für tägliche Geschäftsentscheidungen.</p></div>
+    <nav aria-label="Fußnavigation"><a href="../about.html">Über uns</a><a href="../contact.html">Kontakt</a><a href="../privacy-policy.html">Datenschutzerklärung</a><a href="../terms.html">Nutzungsbedingungen</a><a href="../advertising-disclosure.html">Werbehinweise</a></nav>
+    <p class="disclaimer">Nur zur allgemeinen Information. Berechnungsschätzungen ersetzen keine Finanz-, Steuer-, Anlage- oder Rechtsberatung.</p>
+    <p class="copyright">&copy; <span data-year>2026</span> Kostenlose Business-Rechner. Alle Rechte vorbehalten.</p>
+  </div></footer>
+</body>
+</html>

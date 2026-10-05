@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ROI-Rechner - Kostenloses Werkzeug für Investitionsrendite</title>
+  <meta name="description" content="Gewinn und Investitionsrendite aus Anfangsinvestition und Endwert berechnen. Kostenloser ROI-Rechner mit Beispielen, Verlustbehandlung, Formeln und Fragen.">
+  <meta name="theme-color" content="#153a56">
+  <link rel="icon" href="../../assets/favicon.ico" type="image/x-icon" sizes="16x16 32x32 48x48 64x64">
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml" sizes="any">
+  <link rel="stylesheet" href="../../style.css">
+  <script src="../../script.js" defer></script>
+  <script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Was ist ROI?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Return on Investment beschreibt Gewinn oder Verlust einer Investition als Prozentsatz ihrer Anfangskosten. Positiver ROI bedeutet, dass der Endwert die Anfangsinvestition übersteigt."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Wie berechne ich ROI?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ziehen Sie die Anfangsinvestition vom Endwert ab, teilen Sie den Gewinn durch die Anfangsinvestition und multiplizieren Sie mit 100. Eine Investition von 1000 mit 1250 Endwert hat 25% ROI."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Was sollte ich als Endwert eingeben?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Geben Sie den gesamten erhaltenen Betrag oder bewerteten Endwert einschließlich zurückgewonnenem Kapital ein, nicht nur Gewinn. Erzeugt eine Investition von 1000 einen Gewinn von 250 und gibt das Kapital zurück, geben Sie 1250 ein."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Kann ROI negativ sein?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ja. Ein Endwert unter der Anfangsinvestition erzeugt Verlust und negativen ROI. 1000 investieren und 800 erhalten ergibt -200 Gewinn und -20% ROI."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Kann ich einen negativen Endwert eingeben?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ja. Verwenden Sie einen negativen Endwert für einen Nettobetrag unter null, etwa zusätzliche Verbindlichkeiten oder Mittelabflüsse im gewählten Umfang. 1000 Anfangsinvestition und -200 Endwert ergeben 1200 Verlust und -120% ROI. Zählen Sie keinen Abfluss doppelt."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Was passiert bei Anfangsinvestition von null?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "ROI ist undefiniert, weil die Formel durch die Anfangsinvestition teilt. Der Rechner zeigt N/A für ROI und weiterhin die Differenz zwischen Endwert und Anfangsinvestition als Gewinn."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Was passiert bei Endwert von null?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Bei positiver Anfangsinvestition bedeutet Endwert null, dass nichts zurückgewonnen wurde. Gewinn entspricht der negativen Investitionssumme und ROI beträgt -100%."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Ist dieser Rechner annualisiert?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Nein. Er berechnet einfachen ROI für den gesamten Eingabezeitraum, ohne Anpassung für Jahre, Zinseszins oder Zahlungszeitpunkte."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Welche Kosten sollte ich berücksichtigen?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Verwenden Sie einen einheitlichen Umfang. Berücksichtigen Sie Gebühren und weitere Kosten je nach Aufzeichnungen in Investition oder Endwert, ohne eine Ausgabe doppelt abzuziehen. Fehlende Kosten werden nicht automatisch ergänzt."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Was unterscheidet ROI und Gewinn?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Gewinn ist der absolute Gewinn oder Verlust in Ihrer Währung. ROI setzt ihn ins Verhältnis zur Investition. 200 Gewinn auf 1000 Investition ergibt 20% ROI; derselbe Gewinn auf 2000 ergibt 10% ROI."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Kann ich jede Währung verwenden?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ja. Verwenden Sie dieselbe Währung für beide Eingaben. Gewinn wird darin ausgedrückt, ROI als Prozentsatz. Der Rechner rechnet keine Wechselkurse um."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Werden meine Investitionsdaten gespeichert?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Die Berechnungen laufen in Ihrem Browser. Der Rechner sendet keine Eingaben an einen Server und speichert sie weder in einer Datenbank noch im Browserspeicher. Zurücksetzen leert das Formular."
+        }
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Startseite",
+        "item": "https://bizcalchub.top/de/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Rechner",
+        "item": "https://bizcalchub.top/de/#calculators"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "ROI-Rechner"
+      }
+    ]
+  }
+]
+</script>
+  <!-- multilingual-seo:start -->
+  <link rel="canonical" href="https://bizcalchub.top/de/calculators/roi-calculator.html">
+  <link rel="alternate" hreflang="en" href="https://bizcalchub.top/calculators/roi-calculator.html">
+  <link rel="alternate" hreflang="de" href="https://bizcalchub.top/de/calculators/roi-calculator.html">
+  <link rel="alternate" hreflang="es" href="https://bizcalchub.top/es/calculators/roi-calculator.html">
+  <link rel="alternate" hreflang="x-default" href="https://bizcalchub.top/calculators/roi-calculator.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://bizcalchub.top/de/calculators/roi-calculator.html">
+  <meta property="og:title" content="ROI-Rechner - Kostenloses Werkzeug für Investitionsrendite">
+  <meta property="og:description" content="Gewinn und Investitionsrendite aus Anfangsinvestition und Endwert berechnen. Kostenloser ROI-Rechner mit Beispielen, Verlustbehandlung, Formeln und Fragen.">
+  <meta property="og:site_name" content="Kostenlose Business-Rechner">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:locale:alternate" content="es_ES">
+  <!-- multilingual-seo:end -->
+  <script type="application/json" id="calculator-translations">{"messages":{"Profit is in the same currency as your inputs. Results are rounded to two decimal places.":"Gewinn verwendet dieselbe Währung wie Ihre Eingaben. Ergebnisse werden auf zwei Dezimalstellen gerundet.","Your costs exceed your revenue, resulting in a loss.":"Ihre Kosten übersteigen den Umsatz; es entsteht ein Verlust.","Profit margin is undefined because revenue is zero.":"Die Gewinnmarge ist undefiniert, weil der Umsatz null ist.","Markup is undefined because cost is zero.":"Der Aufschlag ist undefiniert, weil die Kosten null sind.","Profit and selling price use the same currency as your cost. Results are rounded to two decimal places.":"Gewinn und Verkaufspreis verwenden Ihre Kostenwährung. Ergebnisse werden auf zwei Dezimalstellen gerundet.","Profit margin is undefined because selling price is zero.":"Die Gewinnmarge ist undefiniert, weil der Verkaufspreis null ist.","Expenses excluded from your cost are not included in this profit amount.":"Nicht in den Kosten enthaltene Ausgaben sind in diesem Gewinnbetrag nicht berücksichtigt.","Profit uses the same currency as your inputs. Results are rounded to two decimal places.":"Gewinn verwendet Ihre Eingabewährung. Ergebnisse werden auf zwei Dezimalstellen gerundet.","Final return is below initial investment, resulting in a loss.":"Der Endwert liegt unter der Anfangsinvestition; es entsteht ein Verlust.","ROI is undefined because initial investment is zero.":"ROI ist undefiniert, weil die Anfangsinvestition null ist.","Final return equals initial investment: the investment breaks even.":"Der Endwert entspricht der Anfangsinvestition: Die Investition erreicht Break-even.","This is simple ROI for your chosen period, not an annualized return.":"Dies ist einfacher ROI für Ihren Zeitraum, keine annualisierte Rendite.","Profit uses your input currency and subtracts advertising spend only. Other business costs are excluded. Results are rounded to two decimal places.":"Gewinn verwendet Ihre Eingabewährung und zieht nur Werbeausgaben ab. Weitere Geschäftskosten sind ausgeschlossen. Ergebnisse werden auf zwei Dezimalstellen gerundet.","ROAS ratio and percentage are undefined because advertising spend is zero.":"ROAS-Verhältnis und -Prozentsatz sind undefiniert, weil die Werbeausgaben null sind.","Each unit of ad spend generated {value} units of attributed revenue.":"Jede Einheit Werbeausgaben erzeugte {value} Einheiten zugeordneten Umsatz.","Revenue is below ad spend, resulting in a loss before other costs.":"Umsatz liegt unter den Werbeausgaben; vor weiteren Kosten entsteht Verlust.","Revenue covers ad spend only; other costs still need to be covered.":"Umsatz deckt nur Werbeausgaben; weitere Kosten müssen noch gedeckt werden.","Revenue and contribution use your input currency. Results are rounded to two decimal places; revenue uses the unrounded theoretical unit quantity.":"Umsatz und Deckungsbeitrag verwenden Ihre Eingabewährung. Ergebnisse werden auf zwei Dezimalstellen gerundet; Umsatz verwendet die ungerundete theoretische Menge.","Contribution margin is zero. Sales contribute nothing toward positive fixed costs, so there is no break even sales target.":"Der Deckungsbeitrag ist null. Verkäufe tragen nichts zur Deckung positiver Fixkosten bei; es gibt kein Break-even-Absatzziel.","Contribution margin is negative. Each sale increases the loss, so no nonnegative sales volume covers positive fixed costs.":"Der Deckungsbeitrag ist negativ. Jeder Verkauf erhöht den Verlust; keine nichtnegative Absatzmenge deckt positive Fixkosten.","With zero fixed costs, zero sales is the break even point.":"Bei Fixkosten von null ist null Absatz der Break-even-Punkt.","Any positive sales volume creates a loss because contribution margin is negative.":"Jeder positive Absatz erzeugt Verlust, weil der Deckungsbeitrag negativ ist.","With zero contribution margin, all sales volumes also break even in this model.":"Bei Deckungsbeitrag null erreichen in diesem Modell alle Absatzmengen Break-even.","For indivisible products, sell at least {value} whole units to cover these costs.":"Verkaufen Sie bei unteilbaren Produkten mindestens {value} ganze Einheiten zur Kostendeckung.","This quantity exceeds reliable whole-unit precision. Use a smaller planning scope before setting a whole-unit target.":"Diese Menge überschreitet die verlässliche Ganzzahlgenauigkeit. Verkleinern Sie den Planungsumfang vor Festlegung des Ganzzahlziels.","Profit Per Unit is contribution before fixed costs, not net profit.":"Gewinn pro Einheit ist Deckungsbeitrag vor Fixkosten, nicht Nettogewinn.","These amounts produce a result that is too large. Use smaller amounts or less extreme ratios.":"Diese Beträge erzeugen ein zu großes Ergebnis. Verwenden Sie kleinere Beträge oder weniger extreme Verhältnisse.","These inputs produce amounts that are too large. Enter a smaller cost or markup percentage.":"Diese Eingaben erzeugen zu große Beträge. Geben Sie niedrigere Kosten oder einen kleineren Aufschlag ein.","These inputs produce a result that is too large. Use smaller amounts or a less extreme ratio.":"Diese Eingaben erzeugen ein zu großes Ergebnis. Verwenden Sie kleinere Beträge oder ein weniger extremes Verhältnis.","These inputs produce a result that is too large. Use smaller amounts or a less extreme revenue-to-spend ratio.":"Diese Eingaben erzeugen ein zu großes Ergebnis. Verwenden Sie kleinere Beträge oder ein weniger extremes Verhältnis von Umsatz zu Ausgaben.","These inputs produce a result that is too large. Use smaller costs or a less extreme contribution margin.":"Diese Eingaben erzeugen ein zu großes Ergebnis. Verwenden Sie kleinere Kosten oder einen weniger extremen Deckungsbeitrag.","Revenue and cost must be finite, nonnegative numbers.":"Umsatz und Kosten müssen endliche, nichtnegative Zahlen sein.","Cost and markup percentage must be finite, zero or positive numbers.":"Kosten und Aufschlag müssen endliche Zahlen von null oder darüber sein.","Initial investment must be zero or positive, and final return must be a finite number.":"Die Anfangsinvestition muss null oder positiv und der Endwert eine endliche Zahl sein.","Advertising spend and revenue generated must be finite, zero or positive numbers.":"Werbeausgaben und erzielter Umsatz müssen endliche Zahlen von null oder darüber sein.","Fixed costs, selling price, and variable cost must be finite, zero or positive numbers.":"Fixkosten, Verkaufspreis und variable Kosten müssen endliche Zahlen von null oder darüber sein.","{label} must be a number, such as 10000 or 10000.50. Leave out commas and currency symbols.":"{label} muss eine Zahl wie 10000 oder 10000.50 sein. Verwenden Sie keine Tausendertrennzeichen oder Währungssymbole.","Enter {label} to calculate your results. Try 10000 for revenue and 7000 for cost, or select the example button.":"Geben Sie {label} zur Berechnung ein. Testen Sie 10000 Umsatz und 7000 Kosten oder wählen Sie die Beispielschaltfläche.","{label} cannot be negative. Enter zero or a positive amount; a loss is calculated when cost exceeds revenue.":"{label} darf nicht negativ sein. Geben Sie null oder einen positiven Betrag ein; ein Verlust entsteht, wenn Kosten den Umsatz übersteigen.","{label} must be a finite, zero or positive number. Leave out commas and currency symbols.":"{label} muss eine endliche Zahl von null oder darüber sein. Verwenden Sie keine Tausendertrennzeichen oder Währungssymbole.","{label} must be a number. Leave out commas, currency symbols, and the percent sign.":"{label} muss eine Zahl sein. Verwenden Sie keine Tausendertrennzeichen, Währungssymbole oder Prozentzeichen.","Enter {label} to calculate. Try a cost of 100 and a markup of 25, or select the example button.":"Geben Sie {label} zur Berechnung ein. Testen Sie 100 Kosten und 25 Aufschlag oder wählen Sie die Beispielschaltfläche.","{label} cannot be negative. Enter zero or a positive number.":"{label} darf nicht negativ sein. Geben Sie null oder eine positive Zahl ein.","{label} must be a finite, zero or positive number. Enter 25 for a 25% markup.":"{label} muss eine endliche Zahl von null oder darüber sein. Geben Sie 25 für 25% Aufschlag ein.","{label} must be a number. Leave out commas and currency symbols.":"{label} muss eine Zahl sein. Verwenden Sie keine Tausendertrennzeichen oder Währungssymbole.","Enter {label} to calculate. Try 10000 invested and 12500 returned, or select the example button.":"Geben Sie {label} zur Berechnung ein. Testen Sie 10000 Investition und 12500 Endwert oder wählen Sie die Beispielschaltfläche.","Initial investment cannot be negative. Enter zero or a positive amount. A negative final return is allowed.":"Die Anfangsinvestition darf nicht negativ sein. Geben Sie null oder einen positiven Betrag ein. Ein negativer Endwert ist erlaubt.","{label} must be a finite number. Use zero or a positive amount for initial investment.":"{label} muss eine endliche Zahl sein. Verwenden Sie null oder einen positiven Betrag für die Anfangsinvestition.","Enter {label} to calculate. Try 1000 in ad spend and 4000 in revenue, or select the example button.":"Geben Sie {label} zur Berechnung ein. Testen Sie 1000 Werbeausgaben und 4000 Umsatz oder wählen Sie die Beispielschaltfläche.","{label} cannot be negative. Enter zero or a positive amount.":"{label} darf nicht negativ sein. Geben Sie null oder einen positiven Betrag ein.","{label} must be a finite, zero or positive number.":"{label} muss eine endliche Zahl von null oder darüber sein.","Enter {label} to calculate, or select the example button.":"Geben Sie {label} zur Berechnung ein oder wählen Sie die Beispielschaltfläche."},"labels":{"Revenue":"Umsatz","revenue":"Umsatz","Cost":"Kosten","cost":"Kosten","Markup percentage":"Aufschlagsprozentsatz","markup percentage":"Aufschlagsprozentsatz","Initial investment":"Anfangsinvestition","initial investment":"Anfangsinvestition","Final return":"Endwert","final return":"Endwert","Advertising spend":"Werbeausgaben","advertising spend":"Werbeausgaben","Revenue generated":"Erzielter Umsatz","revenue generated":"Erzielter Umsatz","Fixed costs":"Fixkosten","fixed costs":"Fixkosten","Selling price per unit":"Verkaufspreis pro Einheit","selling price per unit":"Verkaufspreis pro Einheit","Variable cost per unit":"Variable Kosten pro Einheit","variable cost per unit":"Variable Kosten pro Einheit"}}</script>
+  <script src="../../assets/localization.js" defer></script>
+</head>
+<body class="business-calculator-page">
+  <a class="skip-link" href="#main-content">Zum Hauptinhalt springen</a>
+  <header class="site-header"><div class="container header-inner">
+    <a class="brand" href="../">Kostenlose Business- <span>Rechner</span></a>
+    <button class="menu-toggle" type="button" aria-controls="primary-navigation" aria-expanded="false" hidden>Menü</button>
+    <nav id="primary-navigation" aria-label="Hauptnavigation"><a href="../">Startseite</a><a href="../#calculators">Rechner</a><a href="../about.html">Über uns</a><a href="../contact.html">Kontakt</a><a href="../advertising-disclosure.html">Werbehinweise</a></nav>
+    <!-- language-switcher:start -->
+    <nav class="language-switcher" aria-label="Sprache">
+      <a href="../../calculators/roi-calculator.html" lang="en" hreflang="en">English</a>
+      <a href="roi-calculator.html" lang="de" hreflang="de" aria-current="page">Deutsch</a>
+      <a href="../../es/calculators/roi-calculator.html" lang="es" hreflang="es">Español</a>
+    </nav>
+    <!-- language-switcher:end -->
+  </div></header>
+  <main id="main-content" class="container">
+    <nav class="breadcrumbs" aria-label="Brotkrumennavigation"><ol><li><a href="../">Startseite</a></li><li><a href="../#calculators">Rechner</a></li><li aria-current="page">ROI-Rechner</li></ol></nav>
+    <section class="tool-heading"><span class="eyebrow">Business-Rechner</span><h1>ROI-Rechner</h1><p class="lead">Messen Sie Gewinn oder Verlust Ihrer Investition. Berechnen Sie Gewinn und einfachen ROI aus Anfangsinvestition und gesamtem Endwert.</p><div class="tool-benefits"><span>Kostenlos nutzbar</span><span>Keine Anmeldung nötig</span><span>Berechnungen bleiben in Ihrem Browser</span></div></section>
+    <div class="tool-layout">
+      <section class="panel calculator-panel" aria-labelledby="calculator-heading">
+        <h2 id="calculator-heading">Ihre Investitionsrendite berechnen</h2>
+        <p id="input-help">Verwenden Sie dieselbe Währung und denselben Zeitraum. Geben Sie Beträge ohne Tausendertrennzeichen oder Währungssymbole ein. Endwert enthält zurückgewonnenes Kapital, nicht nur Gewinn.</p>
+        <form id="roi-form" novalidate>
+          <div class="calculator-inputs">
+            <div class="field"><label for="initial-investment">Anfangsinvestition</label><input id="initial-investment" name="investment" type="number" min="0" step="any" inputmode="decimal" placeholder="10000" required aria-describedby="investment-help input-help calculator-error"><small id="investment-help">Die anfängliche Investitionssumme. Null ergibt undefinierten ROI.</small></div>
+            <div class="field"><label for="final-return">Endwert</label><input id="final-return" name="return" type="number" step="any" placeholder="12500" required aria-describedby="return-help input-help calculator-error"><small id="return-help">Gesamter erhaltener Betrag oder Endwert einschließlich zurückgewonnenem Kapital. Negative Beträge sind erlaubt.</small></div>
+          </div>
+          <p id="calculator-error" class="calculator-error" role="alert" hidden></p>
+          <div class="calculator-actions"><button class="button" type="submit">Berechnen</button><button class="button secondary" type="reset">Zurücksetzen</button><button id="load-roi-example" class="example-button" type="button">Beispiel testen: 10,000 Investition / 12,500 Endwert</button></div>
+        </form>
+        <noscript><p>Aktivieren Sie JavaScript in Ihrem Browser, um diesen Rechner zu nutzen.</p></noscript>
+        <section class="calculator-results" aria-labelledby="results-heading" aria-live="polite" aria-atomic="true">
+          <h2 id="results-heading">Ihre Ergebnisse</h2><p id="result-prompt">Geben Sie Anfangsinvestition und Endwert ein und wählen Sie Berechnen.</p>
+          <div id="result-details" hidden><dl class="result-grid two-results"><div><dt>Gewinn</dt><dd id="roi-profit-result"></dd><p class="metric-help">Endwert minus Investition</p></div><div class="primary-result"><dt>ROI-Prozentsatz</dt><dd id="roi-percentage-result"></dd><p class="metric-help">Gewinn relativ zur Anfangsinvestition</p></div></dl><p id="result-note" class="small"></p></div>
+        </section>
+      </section>
+      <aside class="ad" aria-label="Werbeplatzhalter"><span>Werbung</span><p>Reservierte Werbefläche</p></aside>
+    </div>
+    <article class="content-page explanation">
+      <section><span class="eyebrow">Ihre Investition verstehen</span><h2>Was ist ROI?</h2><p>ROI steht für Return on Investment. Es misst Gewinn oder Verlust relativ zur Investitionssumme als Prozentsatz. Dieser Rechner verwendet einfachen ROI und vergleicht Anfangsinvestition mit gesamtem Endwert über den gewählten Zeitraum.</p><p>Endwert bedeutet den gesamten erhaltenen Betrag oder Endwert einschließlich zurückgewonnenem Kapital. Investieren Sie $10,000 und enden mit $12,500, beträgt der Endwert $12,500 und der Gewinn $2,500.</p></section>
+      <section><h2>ROI-Formel</h2><div class="panel formulas"><p><strong>Gewinn = Endwert − Anfangsinvestition</strong></p><p><strong>ROI = (Gewinn / Anfangsinvestition) × 100</strong></p></div><p>Ziehen Sie zuerst die Investition ab, damit der Zähler Gewinn oder Verlust statt Gesamterlös darstellt. Multiplizieren Sie das Verhältnis mit 100 für den Prozentsatz. Bei Anfangsinvestition null ist ROI undefiniert und zeigt N/A.</p></section>
+      <section><h2>So berechnen Sie ROI</h2><ol><li><strong>Umfang und Zeitraum wählen.</strong> Entscheiden Sie, welche Investition und welches Enddatum Sie bewerten möchten.</li><li><strong>Anfangsinvestition eingeben.</strong> Verwenden Sie die anfänglichen Kosten dieser Investition.</li><li><strong>Gesamten Endwert eingeben.</strong> Berücksichtigen Sie zurückgewonnenes Kapital und relevante Erlöse oder Endwerte. Behandeln Sie enthaltene Ausgaben einheitlich.</li><li><strong>Gewinn berechnen.</strong> Ziehen Sie die Anfangsinvestition vom Endwert ab.</li><li><strong>Prozentsatz berechnen.</strong> Teilen Sie Gewinn durch Anfangsinvestition und multiplizieren Sie mit 100.</li></ol><p>Verwenden Sie dieselbe Währung und zählen Sie Ausgaben nicht doppelt. Das Werkzeug zeigt zwei Dezimalstellen, annualisiert nicht und berücksichtigt keine Zahlungszeitpunkte.</p></section>
+      <section><h2>ROI-Beispiel</h2><p>Ein beispielhaftes Geschäftsprojekt hat $10,000 Anfangsinvestition und $12,500 gesamten Endwert im betrachteten Zeitraum.</p><ul><li>Gewinn = $12,500 − $10,000 = <strong>$2,500</strong></li><li>ROI = ($2,500 / $10,000) × 100 = <strong>25.00%</strong></li></ul><p>Unter diesen Annahmen erzeugt das Projekt 25 Cent Gewinn je investiertem Dollar. Bei nur $8,000 Endwert wären Gewinn -$2,000 und ROI -20.00%. Ohne zurückgewonnenen Wert wäre ROI -100%.</p></section>
+      <section><h2>Warum ROI für Unternehmen wichtig ist</h2><p>ROI bietet Teams einen gemeinsamen Prozentsatz zur Bewertung unterschiedlich großer Investitionen. Es unterstützt Diskussionen über Ausstattung, Projekte und weitere Ausgaben bei einheitlich definierten Kosten und Erträgen.</p><p>Der Prozentsatz beschreibt nicht jeden Entscheidungsfaktor. Investitionen mit gleichem einfachem ROI können sich in Dauer, Risiko, Zahlungszeitpunkten und Aufwand unterscheiden. Vergleichen Sie auch absoluten Gewinn und Zeitraum.</p></section>
+      <section><h2>Unterschied zwischen ROI und Gewinn</h2><p>Gewinn ist ein Betrag, ROI ein Verhältnis. Größerer Gewinn bedeutet nicht unbedingt höhere Rendite je investiertem Dollar.</p><div class="table-scroll" role="region" aria-label="Vergleich von ROI und Gewinn" tabindex="0"><table><caption>Gleicher Gewinn, unterschiedliche Investitionssummen</caption><thead><tr><th scope="col">Kennzahl</th><th scope="col">Projekt A</th><th scope="col">Projekt B</th></tr></thead><tbody><tr><th scope="row">Anfangsinvestition</th><td>$1,000</td><td>$2,000</td></tr><tr><th scope="row">Endwert</th><td>$1,200</td><td>$2,200</td></tr><tr><th scope="row">Gewinn</th><td>$200</td><td>$200</td></tr><tr><th scope="row">ROI</th><td>20.00%</td><td>10.00%</td></tr></tbody></table></div><p>Beide Projekte erzielen $200 Gewinn, aber Projekt A erzielt relativ zur Anfangsinvestition mehr. Für Gewinn relativ zum Verkaufsumsatz verwenden Sie den <a href="profit-margin-calculator.html">Gewinnmargenrechner</a>.</p></section>
+      <section class="faq" aria-labelledby="faq-heading"><h2 id="faq-heading">Häufig gestellte Fragen</h2>
+        <details><summary>Was ist ROI?</summary><p>Return on Investment beschreibt Gewinn oder Verlust einer Investition als Prozentsatz ihrer Anfangskosten. Positiver ROI bedeutet, dass der Endwert die Anfangsinvestition übersteigt.</p></details>
+        <details><summary>Wie berechne ich ROI?</summary><p>Ziehen Sie die Anfangsinvestition vom Endwert ab, teilen Sie den Gewinn durch die Anfangsinvestition und multiplizieren Sie mit 100. Eine Investition von 1000 mit 1250 Endwert hat 25% ROI.</p></details>
+        <details><summary>Was sollte ich als Endwert eingeben?</summary><p>Geben Sie den gesamten erhaltenen Betrag oder bewerteten Endwert einschließlich zurückgewonnenem Kapital ein, nicht nur Gewinn. Erzeugt eine Investition von 1000 einen Gewinn von 250 und gibt das Kapital zurück, geben Sie 1250 ein.</p></details>
+        <details><summary>Kann ROI negativ sein?</summary><p>Ja. Ein Endwert unter der Anfangsinvestition erzeugt Verlust und negativen ROI. 1000 investieren und 800 erhalten ergibt -200 Gewinn und -20% ROI.</p></details>
+        <details><summary>Kann ich einen negativen Endwert eingeben?</summary><p>Ja. Verwenden Sie einen negativen Endwert für einen Nettobetrag unter null, etwa zusätzliche Verbindlichkeiten oder Mittelabflüsse im gewählten Umfang. 1000 Anfangsinvestition und -200 Endwert ergeben 1200 Verlust und -120% ROI. Zählen Sie keinen Abfluss doppelt.</p></details>
+        <details><summary>Was passiert bei Anfangsinvestition von null?</summary><p>ROI ist undefiniert, weil die Formel durch die Anfangsinvestition teilt. Der Rechner zeigt N/A für ROI und weiterhin die Differenz zwischen Endwert und Anfangsinvestition als Gewinn.</p></details>
+        <details><summary>Was passiert bei Endwert von null?</summary><p>Bei positiver Anfangsinvestition bedeutet Endwert null, dass nichts zurückgewonnen wurde. Gewinn entspricht der negativen Investitionssumme und ROI beträgt -100%.</p></details>
+        <details><summary>Ist dieser Rechner annualisiert?</summary><p>Nein. Er berechnet einfachen ROI für den gesamten Eingabezeitraum, ohne Anpassung für Jahre, Zinseszins oder Zahlungszeitpunkte.</p></details>
+        <details><summary>Welche Kosten sollte ich berücksichtigen?</summary><p>Verwenden Sie einen einheitlichen Umfang. Berücksichtigen Sie Gebühren und weitere Kosten je nach Aufzeichnungen in Investition oder Endwert, ohne eine Ausgabe doppelt abzuziehen. Fehlende Kosten werden nicht automatisch ergänzt.</p></details>
+        <details><summary>Was unterscheidet ROI und Gewinn?</summary><p>Gewinn ist der absolute Gewinn oder Verlust in Ihrer Währung. ROI setzt ihn ins Verhältnis zur Investition. 200 Gewinn auf 1000 Investition ergibt 20% ROI; derselbe Gewinn auf 2000 ergibt 10% ROI.</p></details>
+        <details><summary>Kann ich jede Währung verwenden?</summary><p>Ja. Verwenden Sie dieselbe Währung für beide Eingaben. Gewinn wird darin ausgedrückt, ROI als Prozentsatz. Der Rechner rechnet keine Wechselkurse um.</p></details>
+        <details><summary>Werden meine Investitionsdaten gespeichert?</summary><p>Die Berechnungen laufen in Ihrem Browser. Der Rechner sendet keine Eingaben an einen Server und speichert sie weder in einer Datenbank noch im Browserspeicher. Zurücksetzen leert das Formular.</p></details>
+      </section><a class="text-link" href="../#calculators">Alle Rechner ansehen -&gt;</a>
+    </article>
+  </main>
+  <footer class="site-footer"><div class="container footer-inner">
+    <div><p class="brand">Kostenlose Business-Rechner</p><p>Klare Werkzeuge für tägliche Geschäftsentscheidungen.</p></div>
+    <nav aria-label="Fußnavigation"><a href="../about.html">Über uns</a><a href="../contact.html">Kontakt</a><a href="../privacy-policy.html">Datenschutzerklärung</a><a href="../terms.html">Nutzungsbedingungen</a><a href="../advertising-disclosure.html">Werbehinweise</a></nav>
+    <p class="disclaimer">Nur zur allgemeinen Information. Berechnungsschätzungen ersetzen keine Finanz-, Steuer-, Anlage- oder Rechtsberatung.</p>
+    <p class="copyright">&copy; <span data-year>2026</span> Kostenlose Business-Rechner. Alle Rechte vorbehalten.</p>
+  </div></footer>
+</body>
+</html>

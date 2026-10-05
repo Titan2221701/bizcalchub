@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <title>Business Calculator</title>
+  <rect width="64" height="64" rx="14" fill="#153a56"/>
+  <rect x="16" y="10" width="32" height="44" rx="5" fill="#ffffff"/>
+  <rect x="21" y="16" width="22" height="10" rx="2" fill="#087f73"/>
+  <g fill="#153a56">
+    <rect x="21" y="31" width="6" height="6" rx="1"/>
+    <rect x="29" y="31" width="6" height="6" rx="1"/>
+    <rect x="21" y="41" width="6" height="6" rx="1"/>
+    <rect x="29" y="41" width="6" height="6" rx="1"/>
+  </g>
+  <rect x="37" y="31" width="6" height="16" rx="1" fill="#087f73"/>
+</svg>

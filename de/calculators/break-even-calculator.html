@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Break-even-Rechner - Menge und Umsatz</title>
+  <meta name="description" content="Break-even-Menge, Umsatz und Deckungsbeitrag aus Fixkosten, Stückpreis und variablen Kosten berechnen. Kostenloser Rechner mit Beispielen und Fragen.">
+  <meta name="theme-color" content="#153a56">
+  <link rel="icon" href="../../assets/favicon.ico" type="image/x-icon" sizes="16x16 32x32 48x48 64x64">
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml" sizes="any">
+  <link rel="stylesheet" href="../../style.css">
+  <script src="../../script.js" defer></script>
+  <script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Was ist der Break-even-Punkt?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Es ist das Absatzvolumen, bei dem der Gesamtumsatz den in der Analyse berücksichtigten fixen und variablen Kosten entspricht. Der modellierte Gesamtgewinn beträgt dann null."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Wie berechne ich die Break-even-Menge?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ziehen Sie die variablen Stückkosten vom Stückverkaufspreis ab und teilen Sie die Fixkosten durch diesen Deckungsbeitrag. Ein brauchbares Absatzziel setzt einen positiven Deckungsbeitrag voraus."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Was zählt zu den Fixkosten?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Fixkosten ändern sich im betrachteten Zeitraum und Absatzbereich nicht mit der Absatzmenge, etwa eine Monatsmiete oder ein fester Softwarevertrag. Ordnen Sie Kosten für Ihr Unternehmen einheitlich zu."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Was zählt zu den variablen Stückkosten?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Variable Kosten ändern sich mit der verkauften Stückzahl. Dazu können Material, Verpackung oder Verkaufsgebühren zählen. Verwenden Sie die Kosten für eine Einheit, nicht für alle Einheiten."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Ist Gewinn pro Einheit dasselbe wie Nettogewinn?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Nein. Hier bedeutet es Verkaufspreis minus variable Stückkosten, also Deckungsbeitrag pro Einheit. Dieser Betrag deckt zunächst Fixkosten, bevor ein Gesamtgewinn entsteht."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Was passiert bei einem Deckungsbeitrag von null?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Bei positiven Fixkosten können Verkäufe diese nicht decken, weil jede Einheit null beiträgt. Break-even-Menge und -Umsatz zeigen N/A. Sind auch die Fixkosten null, ist bei null Verkäufen und jeder weiteren Absatzmenge der Break-even erreicht."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Was passiert bei negativem Deckungsbeitrag?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Jeder Verkauf erhöht den modellierten Verlust. Bei positiven Fixkosten gibt es keine nichtnegative Break-even-Menge. Bei Fixkosten von null ist null Absatz der Break-even-Punkt, doch jeder positive Absatz erzeugt Verlust."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Sollte ich die Break-even-Menge aufrunden?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Runden Sie bei unteilbaren Produkten das ungerundete Formelergebnis auf eine ganze Einheit auf. Das Hauptergebnis zeigt die theoretische Menge, der Ergebnishinweis das Ganzzahlziel. Der Break-even-Umsatz verwendet die ungerundete theoretische Menge."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Was passiert bei Fixkosten von null?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Null Verkäufe decken null Fixkosten, daher sind Break-even-Menge und -Umsatz null. Bei positivem Deckungsbeitrag ist jeder weitere Verkauf profitabel; bei negativem entsteht mit jedem weiteren Verkauf Verlust."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Kann ich mehrere Produkte berücksichtigen?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Dieser Rechner modelliert ein Produkt oder eine repräsentative Einheit. Bei unterschiedlichen Preisen und variablen Kosten brauchen Sie einen gewichteten Deckungsbeitrag auf Basis eines angenommenen Absatzmixes. Ein anderer Mix verändert das Ergebnis."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Welchen Zeitraum und welche Währung sollte ich verwenden?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Verwenden Sie Fixkosten für einen einheitlichen Zeitraum und dazu passende Stückwerte. Alle Beträge müssen dieselbe Währung haben. Umsatz und Deckungsbeitrag werden in dieser Eingabewährung angegeben."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Werden meine Eingaben gespeichert oder an einen Server gesendet?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Die Berechnungen laufen in Ihrem Browser. Der Rechner sendet keine Eingaben an einen Server und speichert sie weder in einer Datenbank noch im Browserspeicher. Zurücksetzen leert das Formular."
+        }
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Startseite",
+        "item": "https://bizcalchub.top/de/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Rechner",
+        "item": "https://bizcalchub.top/de/#calculators"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Break-even-Rechner"
+      }
+    ]
+  }
+]
+</script>
+  <!-- multilingual-seo:start -->
+  <link rel="canonical" href="https://bizcalchub.top/de/calculators/break-even-calculator.html">
+  <link rel="alternate" hreflang="en" href="https://bizcalchub.top/calculators/break-even-calculator.html">
+  <link rel="alternate" hreflang="de" href="https://bizcalchub.top/de/calculators/break-even-calculator.html">
+  <link rel="alternate" hreflang="es" href="https://bizcalchub.top/es/calculators/break-even-calculator.html">
+  <link rel="alternate" hreflang="x-default" href="https://bizcalchub.top/calculators/break-even-calculator.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://bizcalchub.top/de/calculators/break-even-calculator.html">
+  <meta property="og:title" content="Break-even-Rechner - Menge und Umsatz">
+  <meta property="og:description" content="Break-even-Menge, Umsatz und Deckungsbeitrag aus Fixkosten, Stückpreis und variablen Kosten berechnen. Kostenloser Rechner mit Beispielen und Fragen.">
+  <meta property="og:site_name" content="Kostenlose Business-Rechner">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:locale:alternate" content="es_ES">
+  <!-- multilingual-seo:end -->
+  <script type="application/json" id="calculator-translations">{"messages":{"Profit is in the same currency as your inputs. Results are rounded to two decimal places.":"Gewinn verwendet dieselbe Währung wie Ihre Eingaben. Ergebnisse werden auf zwei Dezimalstellen gerundet.","Your costs exceed your revenue, resulting in a loss.":"Ihre Kosten übersteigen den Umsatz; es entsteht ein Verlust.","Profit margin is undefined because revenue is zero.":"Die Gewinnmarge ist undefiniert, weil der Umsatz null ist.","Markup is undefined because cost is zero.":"Der Aufschlag ist undefiniert, weil die Kosten null sind.","Profit and selling price use the same currency as your cost. Results are rounded to two decimal places.":"Gewinn und Verkaufspreis verwenden Ihre Kostenwährung. Ergebnisse werden auf zwei Dezimalstellen gerundet.","Profit margin is undefined because selling price is zero.":"Die Gewinnmarge ist undefiniert, weil der Verkaufspreis null ist.","Expenses excluded from your cost are not included in this profit amount.":"Nicht in den Kosten enthaltene Ausgaben sind in diesem Gewinnbetrag nicht berücksichtigt.","Profit uses the same currency as your inputs. Results are rounded to two decimal places.":"Gewinn verwendet Ihre Eingabewährung. Ergebnisse werden auf zwei Dezimalstellen gerundet.","Final return is below initial investment, resulting in a loss.":"Der Endwert liegt unter der Anfangsinvestition; es entsteht ein Verlust.","ROI is undefined because initial investment is zero.":"ROI ist undefiniert, weil die Anfangsinvestition null ist.","Final return equals initial investment: the investment breaks even.":"Der Endwert entspricht der Anfangsinvestition: Die Investition erreicht Break-even.","This is simple ROI for your chosen period, not an annualized return.":"Dies ist einfacher ROI für Ihren Zeitraum, keine annualisierte Rendite.","Profit uses your input currency and subtracts advertising spend only. Other business costs are excluded. Results are rounded to two decimal places.":"Gewinn verwendet Ihre Eingabewährung und zieht nur Werbeausgaben ab. Weitere Geschäftskosten sind ausgeschlossen. Ergebnisse werden auf zwei Dezimalstellen gerundet.","ROAS ratio and percentage are undefined because advertising spend is zero.":"ROAS-Verhältnis und -Prozentsatz sind undefiniert, weil die Werbeausgaben null sind.","Each unit of ad spend generated {value} units of attributed revenue.":"Jede Einheit Werbeausgaben erzeugte {value} Einheiten zugeordneten Umsatz.","Revenue is below ad spend, resulting in a loss before other costs.":"Umsatz liegt unter den Werbeausgaben; vor weiteren Kosten entsteht Verlust.","Revenue covers ad spend only; other costs still need to be covered.":"Umsatz deckt nur Werbeausgaben; weitere Kosten müssen noch gedeckt werden.","Revenue and contribution use your input currency. Results are rounded to two decimal places; revenue uses the unrounded theoretical unit quantity.":"Umsatz und Deckungsbeitrag verwenden Ihre Eingabewährung. Ergebnisse werden auf zwei Dezimalstellen gerundet; Umsatz verwendet die ungerundete theoretische Menge.","Contribution margin is zero. Sales contribute nothing toward positive fixed costs, so there is no break even sales target.":"Der Deckungsbeitrag ist null. Verkäufe tragen nichts zur Deckung positiver Fixkosten bei; es gibt kein Break-even-Absatzziel.","Contribution margin is negative. Each sale increases the loss, so no nonnegative sales volume covers positive fixed costs.":"Der Deckungsbeitrag ist negativ. Jeder Verkauf erhöht den Verlust; keine nichtnegative Absatzmenge deckt positive Fixkosten.","With zero fixed costs, zero sales is the break even point.":"Bei Fixkosten von null ist null Absatz der Break-even-Punkt.","Any positive sales volume creates a loss because contribution margin is negative.":"Jeder positive Absatz erzeugt Verlust, weil der Deckungsbeitrag negativ ist.","With zero contribution margin, all sales volumes also break even in this model.":"Bei Deckungsbeitrag null erreichen in diesem Modell alle Absatzmengen Break-even.","For indivisible products, sell at least {value} whole units to cover these costs.":"Verkaufen Sie bei unteilbaren Produkten mindestens {value} ganze Einheiten zur Kostendeckung.","This quantity exceeds reliable whole-unit precision. Use a smaller planning scope before setting a whole-unit target.":"Diese Menge überschreitet die verlässliche Ganzzahlgenauigkeit. Verkleinern Sie den Planungsumfang vor Festlegung des Ganzzahlziels.","Profit Per Unit is contribution before fixed costs, not net profit.":"Gewinn pro Einheit ist Deckungsbeitrag vor Fixkosten, nicht Nettogewinn.","These amounts produce a result that is too large. Use smaller amounts or less extreme ratios.":"Diese Beträge erzeugen ein zu großes Ergebnis. Verwenden Sie kleinere Beträge oder weniger extreme Verhältnisse.","These inputs produce amounts that are too large. Enter a smaller cost or markup percentage.":"Diese Eingaben erzeugen zu große Beträge. Geben Sie niedrigere Kosten oder einen kleineren Aufschlag ein.","These inputs produce a result that is too large. Use smaller amounts or a less extreme ratio.":"Diese Eingaben erzeugen ein zu großes Ergebnis. Verwenden Sie kleinere Beträge oder ein weniger extremes Verhältnis.","These inputs produce a result that is too large. Use smaller amounts or a less extreme revenue-to-spend ratio.":"Diese Eingaben erzeugen ein zu großes Ergebnis. Verwenden Sie kleinere Beträge oder ein weniger extremes Verhältnis von Umsatz zu Ausgaben.","These inputs produce a result that is too large. Use smaller costs or a less extreme contribution margin.":"Diese Eingaben erzeugen ein zu großes Ergebnis. Verwenden Sie kleinere Kosten oder einen weniger extremen Deckungsbeitrag.","Revenue and cost must be finite, nonnegative numbers.":"Umsatz und Kosten müssen endliche, nichtnegative Zahlen sein.","Cost and markup percentage must be finite, zero or positive numbers.":"Kosten und Aufschlag müssen endliche Zahlen von null oder darüber sein.","Initial investment must be zero or positive, and final return must be a finite number.":"Die Anfangsinvestition muss null oder positiv und der Endwert eine endliche Zahl sein.","Advertising spend and revenue generated must be finite, zero or positive numbers.":"Werbeausgaben und erzielter Umsatz müssen endliche Zahlen von null oder darüber sein.","Fixed costs, selling price, and variable cost must be finite, zero or positive numbers.":"Fixkosten, Verkaufspreis und variable Kosten müssen endliche Zahlen von null oder darüber sein.","{label} must be a number, such as 10000 or 10000.50. Leave out commas and currency symbols.":"{label} muss eine Zahl wie 10000 oder 10000.50 sein. Verwenden Sie keine Tausendertrennzeichen oder Währungssymbole.","Enter {label} to calculate your results. Try 10000 for revenue and 7000 for cost, or select the example button.":"Geben Sie {label} zur Berechnung ein. Testen Sie 10000 Umsatz und 7000 Kosten oder wählen Sie die Beispielschaltfläche.","{label} cannot be negative. Enter zero or a positive amount; a loss is calculated when cost exceeds revenue.":"{label} darf nicht negativ sein. Geben Sie null oder einen positiven Betrag ein; ein Verlust entsteht, wenn Kosten den Umsatz übersteigen.","{label} must be a finite, zero or positive number. Leave out commas and currency symbols.":"{label} muss eine endliche Zahl von null oder darüber sein. Verwenden Sie keine Tausendertrennzeichen oder Währungssymbole.","{label} must be a number. Leave out commas, currency symbols, and the percent sign.":"{label} muss eine Zahl sein. Verwenden Sie keine Tausendertrennzeichen, Währungssymbole oder Prozentzeichen.","Enter {label} to calculate. Try a cost of 100 and a markup of 25, or select the example button.":"Geben Sie {label} zur Berechnung ein. Testen Sie 100 Kosten und 25 Aufschlag oder wählen Sie die Beispielschaltfläche.","{label} cannot be negative. Enter zero or a positive number.":"{label} darf nicht negativ sein. Geben Sie null oder eine positive Zahl ein.","{label} must be a finite, zero or positive number. Enter 25 for a 25% markup.":"{label} muss eine endliche Zahl von null oder darüber sein. Geben Sie 25 für 25% Aufschlag ein.","{label} must be a number. Leave out commas and currency symbols.":"{label} muss eine Zahl sein. Verwenden Sie keine Tausendertrennzeichen oder Währungssymbole.","Enter {label} to calculate. Try 10000 invested and 12500 returned, or select the example button.":"Geben Sie {label} zur Berechnung ein. Testen Sie 10000 Investition und 12500 Endwert oder wählen Sie die Beispielschaltfläche.","Initial investment cannot be negative. Enter zero or a positive amount. A negative final return is allowed.":"Die Anfangsinvestition darf nicht negativ sein. Geben Sie null oder einen positiven Betrag ein. Ein negativer Endwert ist erlaubt.","{label} must be a finite number. Use zero or a positive amount for initial investment.":"{label} muss eine endliche Zahl sein. Verwenden Sie null oder einen positiven Betrag für die Anfangsinvestition.","Enter {label} to calculate. Try 1000 in ad spend and 4000 in revenue, or select the example button.":"Geben Sie {label} zur Berechnung ein. Testen Sie 1000 Werbeausgaben und 4000 Umsatz oder wählen Sie die Beispielschaltfläche.","{label} cannot be negative. Enter zero or a positive amount.":"{label} darf nicht negativ sein. Geben Sie null oder einen positiven Betrag ein.","{label} must be a finite, zero or positive number.":"{label} muss eine endliche Zahl von null oder darüber sein.","Enter {label} to calculate, or select the example button.":"Geben Sie {label} zur Berechnung ein oder wählen Sie die Beispielschaltfläche."},"labels":{"Revenue":"Umsatz","revenue":"Umsatz","Cost":"Kosten","cost":"Kosten","Markup percentage":"Aufschlagsprozentsatz","markup percentage":"Aufschlagsprozentsatz","Initial investment":"Anfangsinvestition","initial investment":"Anfangsinvestition","Final return":"Endwert","final return":"Endwert","Advertising spend":"Werbeausgaben","advertising spend":"Werbeausgaben","Revenue generated":"Erzielter Umsatz","revenue generated":"Erzielter Umsatz","Fixed costs":"Fixkosten","fixed costs":"Fixkosten","Selling price per unit":"Verkaufspreis pro Einheit","selling price per unit":"Verkaufspreis pro Einheit","Variable cost per unit":"Variable Kosten pro Einheit","variable cost per unit":"Variable Kosten pro Einheit"}}</script>
+  <script src="../../assets/localization.js" defer></script>
+</head>
+<body class="business-calculator-page">
+  <a class="skip-link" href="#main-content">Zum Hauptinhalt springen</a>
+  <header class="site-header"><div class="container header-inner">
+    <a class="brand" href="../">Kostenlose Business- <span>Rechner</span></a>
+    <button class="menu-toggle" type="button" aria-controls="primary-navigation" aria-expanded="false" hidden>Menü</button>
+    <nav id="primary-navigation" aria-label="Hauptnavigation"><a href="../">Startseite</a><a href="../#calculators">Rechner</a><a href="../about.html">Über uns</a><a href="../contact.html">Kontakt</a><a href="../advertising-disclosure.html">Werbehinweise</a></nav>
+    <!-- language-switcher:start -->
+    <nav class="language-switcher" aria-label="Sprache">
+      <a href="../../calculators/break-even-calculator.html" lang="en" hreflang="en">English</a>
+      <a href="break-even-calculator.html" lang="de" hreflang="de" aria-current="page">Deutsch</a>
+      <a href="../../es/calculators/break-even-calculator.html" lang="es" hreflang="es">Español</a>
+    </nav>
+    <!-- language-switcher:end -->
+  </div></header>
+  <main id="main-content" class="container">
+    <nav class="breadcrumbs" aria-label="Brotkrumennavigation"><ol><li><a href="../">Startseite</a></li><li><a href="../#calculators">Rechner</a></li><li aria-current="page">Break-even-Rechner</li></ol></nav>
+    <section class="tool-heading"><span class="eyebrow">Business-Rechner</span><h1>Break-even-Rechner</h1><p class="lead">Ermitteln Sie das Absatzvolumen zur Kostendeckung. Berechnen Sie Break-even-Menge, Umsatz und den Beitrag jeder Einheit zu den Fixkosten.</p><div class="tool-benefits"><span>Kostenlos nutzbar</span><span>Keine Anmeldung nötig</span><span>Berechnungen bleiben in Ihrem Browser</span></div></section>
+    <div class="tool-layout">
+      <section class="panel calculator-panel" aria-labelledby="calculator-heading">
+        <h2 id="calculator-heading">Ihren Break-even-Punkt finden</h2>
+        <p id="input-help">Verwenden Sie dieselbe Währung und einen einheitlichen Kostenzeitraum. Geben Sie null oder positive Beträge ohne Tausendertrennzeichen und Währungssymbole ein.</p>
+        <form id="break-even-form" novalidate>
+          <div class="calculator-inputs">
+            <div class="field full-width"><label for="fixed-costs">Fixkosten</label><input id="fixed-costs" name="fixedCosts" type="number" min="0" step="any" inputmode="decimal" placeholder="10000" required aria-describedby="fixed-help input-help calculator-error"><small id="fixed-help">Gesamte Fixkosten für Ihren Zeitraum, etwa einen Monat.</small></div>
+            <div class="field"><label for="selling-price">Verkaufspreis pro Einheit</label><input id="selling-price" name="sellingPrice" type="number" min="0" step="any" inputmode="decimal" placeholder="50" required aria-describedby="price-help input-help calculator-error"><small id="price-help">Der Umsatz aus dem Verkauf einer Einheit.</small></div>
+            <div class="field"><label for="variable-cost">Variable Kosten pro Einheit</label><input id="variable-cost" name="variableCost" type="number" min="0" step="any" inputmode="decimal" placeholder="30" required aria-describedby="variable-help input-help calculator-error"><small id="variable-help">Die Kosten, die sich mit jeder verkauften Einheit ändern.</small></div>
+          </div>
+          <p id="calculator-error" class="calculator-error" role="alert" hidden></p>
+          <div class="calculator-actions"><button class="button" type="submit">Berechnen</button><button class="button secondary" type="reset">Zurücksetzen</button><button id="load-break-even-example" class="example-button" type="button">Beispiel testen: 10,000 Fixkosten / 50 Preis / 30 variable Kosten</button></div>
+        </form>
+        <noscript><p>Aktivieren Sie JavaScript in Ihrem Browser, um diesen Rechner zu nutzen.</p></noscript>
+        <section class="calculator-results" aria-labelledby="results-heading" aria-live="polite" aria-atomic="true">
+          <h2 id="results-heading">Ihre Ergebnisse</h2><p id="result-prompt">Geben Sie Kosten und Verkaufspreis ein und wählen Sie Berechnen.</p>
+          <div id="result-details" hidden><dl class="result-grid"><div class="primary-result"><dt>Break-even-Menge</dt><dd id="break-even-units-result"></dd><p class="metric-help">Theoretische Absatzmenge</p></div><div><dt>Break-even-Umsatz</dt><dd id="break-even-revenue-result"></dd><p class="metric-help">Ungerundete Menge mal Preis</p></div><div><dt>Gewinn pro Einheit</dt><dd id="contribution-result"></dd><p class="metric-help">Deckungsbeitrag vor Fixkosten</p></div></dl><p id="result-note" class="small"></p></div>
+        </section>
+        <p class="small">Gewinn pro Einheit bedeutet Deckungsbeitrag, nicht Nettogewinn. Das Modell nimmt einen konstanten Stückpreis und konstante variable Stückkosten an.</p>
+      </section>
+      <aside class="ad" aria-label="Werbeplatzhalter"><span>Werbung</span><p>Reservierte Werbefläche</p></aside>
+    </div>
+    <article class="content-page explanation">
+      <section><span class="eyebrow">Ihr Absatzziel planen</span><h2>Was ist der Break-even-Punkt?</h2><p>Am Break-even-Punkt entspricht der Gesamtumsatz den im Modell berücksichtigten Kosten. Darüber entsteht Gewinn, wenn jede Einheit einen positiven Beitrag zu den Fixkosten leistet.</p><p>Dieser Rechner modelliert ein Produkt oder eine repräsentative Einheit. Er trennt Fixkosten für einen Zeitraum von variablen Stückkosten. Das Ergebnis ist eine Planungsschätzung auf Basis dieser Annahmen.</p></section>
+      <section><h2>Break-even-Formel</h2><div class="panel formulas"><p><strong>Deckungsbeitrag pro Einheit = Verkaufspreis pro Einheit − Variable Kosten pro Einheit</strong></p><p><strong>Break-even-Menge = Fixkosten / Deckungsbeitrag pro Einheit</strong></p><p><strong>Break-even-Umsatz = Break-even-Menge × Verkaufspreis pro Einheit</strong></p></div><p>Der Deckungsbeitrag ist der aus jedem Verkauf zur Deckung der Fixkosten verfügbare Betrag. Nach deren Deckung wird zusätzlicher Deckungsbeitrag im Modell zu Gewinn. Gewinn pro Einheit in den Ergebniskarten folgt dieser Definition.</p><p>Die Mengenformel liefert nur bei positivem Deckungsbeitrag ein brauchbares positives Absatzziel. Bei positiven Fixkosten und einem Deckungsbeitrag von null oder darunter deckt keine nichtnegative Absatzmenge die modellierten Kosten.</p></section>
+      <section><h2>So berechnen Sie den Break-even-Punkt</h2><ol><li><strong>Zeitraum wählen.</strong> Addieren Sie die Fixkosten dieses Zeitraums, ohne Monats- und Jahreswerte zu mischen.</li><li><strong>Stückpreis eingeben.</strong> Verwenden Sie den für die modellierten Verkäufe geltenden Preis.</li><li><strong>Variable Stückkosten eingeben.</strong> Berücksichtigen Sie mit jedem Verkauf variierende Kosten auf derselben Stückbasis.</li><li><strong>Variable Kosten vom Preis abziehen.</strong> Das ist der Deckungsbeitrag pro Einheit.</li><li><strong>Fixkosten durch Deckungsbeitrag teilen.</strong> Multiplizieren Sie diese Menge mit dem Stückpreis für den theoretischen Break-even-Umsatz.</li><li><strong>Bei unteilbaren Produkten aufrunden.</strong> Verwenden Sie das Ganzzahlziel im Ergebnishinweis und prüfen Sie Ihre Kapazität dagegen.</li></ol><p>Angezeigte Formelergebnisse haben zwei Dezimalstellen. Der Umsatz wird aus der ungerundeten Menge berechnet, nicht aus den gerundeten angezeigten Einheiten.</p></section>
+      <section><h2>Geschäftsbeispiel</h2><p>Betrachten Sie ein beispielhaftes Geschäft mit $10,000 monatlichen Fixkosten, $50 Stückverkaufspreis und $30 variablen Stückkosten.</p><ul><li>Deckungsbeitrag = $50 − $30 = <strong>$20 pro Einheit</strong></li><li>Break-even-Menge = $10,000 / $20 = <strong>500 Einheiten</strong></li><li>Break-even-Umsatz = 500 × $50 = <strong>$25,000</strong></li></ul><p>Bei 500 Einheiten beträgt der Umsatz $25,000. Die Kosten von $10,000 fix plus $15,000 variabel ergeben ebenfalls $25,000. Bei 600 Einheiten beträgt der modellierte Gewinn (600 × $20) − $10,000 = $2,000.</p><p>Ergibt die Formel 500.25 Einheiten, erfordert ein unteilbares Produkt mindestens 501 Einheiten. Die Umsatzkarte zeigt weiterhin die theoretische Schwelle; der tatsächliche Umsatz beim Ganzzahlziel ist etwas höher.</p></section>
+      <section><h2>Warum Break-even-Analyse wichtig ist</h2><p>Die Break-even-Analyse macht Kostenannahmen zu einem konkreten Absatzziel. Sie hilft zu prüfen, ob erwartete Nachfrage und Produktionskapazität zur Kostendeckung ausreichen.</p><p>Änderungen an Preis, variablen Kosten oder Fixkosten verändern die Schwelle. Vergleichen Sie Szenarien mit einheitlichen Annahmen. Die Berechnung prognostiziert weder Nachfrage noch wechselnde Absatzmixe oder Zahlungszeitpunkte.</p></section>
+      <section><h2>Häufige Fehler</h2><ul><li><strong>Deckungsbeitrag mit Nettogewinn verwechseln.</strong> Jede Einheit muss zunächst Fixkosten decken helfen, bevor das modellierte Unternehmen Gewinn erzielt.</li><li><strong>Kostenzeiträume mischen.</strong> Monatliche Absatzziele brauchen die Fixkosten des entsprechenden Monats.</li><li><strong>Gesamte variable Kosten als Stückkosten verwenden.</strong> Teilen Sie die Gesamtkosten passend auf, bevor Sie den Stückwert eingeben.</li><li><strong>Kosten weglassen oder doppelt zählen.</strong> Ordnen Sie jede berücksichtigte Ausgabe einheitlich zu.</li><li><strong>Deckungsbeiträge von null oder darunter ignorieren.</strong> Mehr Verkäufe decken keine positiven Fixkosten, wenn jede Einheit nichts beiträgt oder den Verlust erhöht.</li><li><strong>Ein gebrochenes Absatzziel abrunden.</strong> Ganze Produkte erfordern eine aufgerundete Menge auf Basis des ungerundeten Ergebnisses.</li><li><strong>Unveränderte Kosten und Absatzmixe voraussetzen.</strong> Mengenrabatte, Kapazitätsgrenzen und Produktmix können die Annahmen verändern.</li></ul></section>
+      <section class="faq" aria-labelledby="faq-heading"><h2 id="faq-heading">Häufig gestellte Fragen</h2>
+        <details><summary>Was ist der Break-even-Punkt?</summary><p>Es ist das Absatzvolumen, bei dem der Gesamtumsatz den in der Analyse berücksichtigten fixen und variablen Kosten entspricht. Der modellierte Gesamtgewinn beträgt dann null.</p></details>
+        <details><summary>Wie berechne ich die Break-even-Menge?</summary><p>Ziehen Sie die variablen Stückkosten vom Stückverkaufspreis ab und teilen Sie die Fixkosten durch diesen Deckungsbeitrag. Ein brauchbares Absatzziel setzt einen positiven Deckungsbeitrag voraus.</p></details>
+        <details><summary>Was zählt zu den Fixkosten?</summary><p>Fixkosten ändern sich im betrachteten Zeitraum und Absatzbereich nicht mit der Absatzmenge, etwa eine Monatsmiete oder ein fester Softwarevertrag. Ordnen Sie Kosten für Ihr Unternehmen einheitlich zu.</p></details>
+        <details><summary>Was zählt zu den variablen Stückkosten?</summary><p>Variable Kosten ändern sich mit der verkauften Stückzahl. Dazu können Material, Verpackung oder Verkaufsgebühren zählen. Verwenden Sie die Kosten für eine Einheit, nicht für alle Einheiten.</p></details>
+        <details><summary>Ist Gewinn pro Einheit dasselbe wie Nettogewinn?</summary><p>Nein. Hier bedeutet es Verkaufspreis minus variable Stückkosten, also Deckungsbeitrag pro Einheit. Dieser Betrag deckt zunächst Fixkosten, bevor ein Gesamtgewinn entsteht.</p></details>
+        <details><summary>Was passiert bei einem Deckungsbeitrag von null?</summary><p>Bei positiven Fixkosten können Verkäufe diese nicht decken, weil jede Einheit null beiträgt. Break-even-Menge und -Umsatz zeigen N/A. Sind auch die Fixkosten null, ist bei null Verkäufen und jeder weiteren Absatzmenge der Break-even erreicht.</p></details>
+        <details><summary>Was passiert bei negativem Deckungsbeitrag?</summary><p>Jeder Verkauf erhöht den modellierten Verlust. Bei positiven Fixkosten gibt es keine nichtnegative Break-even-Menge. Bei Fixkosten von null ist null Absatz der Break-even-Punkt, doch jeder positive Absatz erzeugt Verlust.</p></details>
+        <details><summary>Sollte ich die Break-even-Menge aufrunden?</summary><p>Runden Sie bei unteilbaren Produkten das ungerundete Formelergebnis auf eine ganze Einheit auf. Das Hauptergebnis zeigt die theoretische Menge, der Ergebnishinweis das Ganzzahlziel. Der Break-even-Umsatz verwendet die ungerundete theoretische Menge.</p></details>
+        <details><summary>Was passiert bei Fixkosten von null?</summary><p>Null Verkäufe decken null Fixkosten, daher sind Break-even-Menge und -Umsatz null. Bei positivem Deckungsbeitrag ist jeder weitere Verkauf profitabel; bei negativem entsteht mit jedem weiteren Verkauf Verlust.</p></details>
+        <details><summary>Kann ich mehrere Produkte berücksichtigen?</summary><p>Dieser Rechner modelliert ein Produkt oder eine repräsentative Einheit. Bei unterschiedlichen Preisen und variablen Kosten brauchen Sie einen gewichteten Deckungsbeitrag auf Basis eines angenommenen Absatzmixes. Ein anderer Mix verändert das Ergebnis.</p></details>
+        <details><summary>Welchen Zeitraum und welche Währung sollte ich verwenden?</summary><p>Verwenden Sie Fixkosten für einen einheitlichen Zeitraum und dazu passende Stückwerte. Alle Beträge müssen dieselbe Währung haben. Umsatz und Deckungsbeitrag werden in dieser Eingabewährung angegeben.</p></details>
+        <details><summary>Werden meine Eingaben gespeichert oder an einen Server gesendet?</summary><p>Die Berechnungen laufen in Ihrem Browser. Der Rechner sendet keine Eingaben an einen Server und speichert sie weder in einer Datenbank noch im Browserspeicher. Zurücksetzen leert das Formular.</p></details>
+      </section><a class="text-link" href="../#calculators">Alle Rechner ansehen -&gt;</a>
+    </article>
+  </main>
+  <footer class="site-footer"><div class="container footer-inner">
+    <div><p class="brand">Kostenlose Business-Rechner</p><p>Klare Werkzeuge für tägliche Geschäftsentscheidungen.</p></div>
+    <nav aria-label="Fußnavigation"><a href="../about.html">Über uns</a><a href="../contact.html">Kontakt</a><a href="../privacy-policy.html">Datenschutzerklärung</a><a href="../terms.html">Nutzungsbedingungen</a><a href="../advertising-disclosure.html">Werbehinweise</a></nav>
+    <p class="disclaimer">Nur zur allgemeinen Information. Berechnungsschätzungen ersetzen keine Finanz-, Steuer-, Anlage- oder Rechtsberatung.</p>
+    <p class="copyright">&copy; <span data-year>2026</span> Kostenlose Business-Rechner. Alle Rechte vorbehalten.</p>
+  </div></footer>
+</body>
+</html>

@@ -1,0 +1,4 @@
+# Production crawl configuration.
+User-agent: *
+Allow: /
+Sitemap: https://bizcalchub.top/sitemap.xml
