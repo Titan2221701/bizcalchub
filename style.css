@@ -57,9 +57,14 @@
 .business-calculator-page [data-outcome="loss"] #contribution-result{color:#a32929}
 
 /* Language selection is available independently of the mobile menu. */
-.site-header .site-brand{display:flex;align-items:center;flex:0 0 auto;min-width:0;max-width:180px;height:42px;text-decoration:none}
-.site-header .site-brand img{display:block;height:42px;max-height:42px;width:auto;max-width:180px;object-fit:contain}
-@media(max-width:768px){.site-header .site-brand{height:36px;max-width:140px}.site-header .site-brand img{height:36px;max-height:36px;max-width:140px}}
+.site-header .site-brand{display:flex;align-items:center;gap:10px;flex:0 0 auto;min-width:0;min-height:55px;color:var(--brand);text-decoration:none;line-height:1.2}
+/* Crop the calculator mark visually; the official image and hero stay unchanged. */
+.site-header .brand-icon-frame{position:relative;display:block;flex:0 0 42px;width:42px;height:42px;overflow:hidden}
+.site-header .brand-icon{position:absolute;display:block;width:234px;height:78px;max-width:none;max-height:none;left:-14px;top:-19px}
+.site-header .brand-text{display:flex;flex-direction:column;gap:3px;white-space:nowrap}
+.site-header .brand-name{font-size:20px;font-weight:800}
+.site-header .brand-tagline{font-size:12px;font-weight:500;color:var(--muted)}
+@media(max-width:768px){.site-header .site-brand{min-height:42px}.site-header .brand-icon-frame{flex-basis:36px;width:36px;height:36px}.site-header .brand-icon{width:200.5714px;height:66.8571px;left:-12px;top:-16.2857px}.site-header .brand-name{font-size:18px}.site-header .brand-tagline{font-size:11px}}
 .header-inner{flex-wrap:wrap;padding-block:18px}
 .language-switcher{flex-wrap:wrap;gap:4px;padding:4px;border:1px solid var(--line);border-radius:8px}
 .language-switcher a{padding:5px 9px;font-size:.82rem;border-radius:5px;white-space:nowrap}

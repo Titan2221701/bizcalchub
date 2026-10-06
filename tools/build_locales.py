@@ -71,6 +71,12 @@ def translate_schema(node, lang):
 
 def translated_html(source, lang, text):
     page = output_path(source, lang)
+    # Keep the requested English brand lockup consistent without changing locale catalogs.
+    brands = []
+    def protect_brand(match):
+        brands.append(match.group(0))
+        return f'<brand-placeholder data-index="{len(brands)-1}"></brand-placeholder>'
+    text = re.sub(r'<a class="site-brand"[^>]*>.*?</a>', protect_brand, text, flags=re.S)
     # Protect scripts from ordinary text-node translation.
     scripts = []
     def script(match):
@@ -96,6 +102,8 @@ def translated_html(source, lang, text):
                   lambda m:m.group(1)+html.escape(CATALOGS[lang]['strings'][html.unescape(m.group(2))],quote=True)+m.group(3),text)
     for i,block in enumerate(scripts):
         text=text.replace(f'<script-placeholder data-index="{i}"></script-placeholder>',block)
+    for i,block in enumerate(brands):
+        text=text.replace(f'<brand-placeholder data-index="{i}"></brand-placeholder>',block)
     text=text.replace('<html lang="en">',f'<html lang="{lang}">')
     text=text.replace('<a class="site-brand" href="/">', f'<a class="site-brand" href="/{lang}/">')
     def link(match):

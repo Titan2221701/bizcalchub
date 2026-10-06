@@ -55,7 +55,7 @@ def main():
         for key,value in c['runtime'].items():
             assert re.findall(r'\{\w+\}',key)==re.findall(r'\{\w+\}',value),(lang,key)
     english=build.CATALOGS['en']['strings']
-    allowed_same={'BizCalcHub','English','Deutsch','Espa\u00f1ol','support@bizcalchub.top','ROI','ROAS','4.00x (4.00:1)','4.00x','2.00x','ROI = ($2,500 / $10,000) \u00d7 100 ='}
+    allowed_same={'BizCalcHub','Free Business Calculators','English','Deutsch','Espa\u00f1ol','support@bizcalchub.top','ROI','ROAS','4.00x (4.00:1)','4.00x','2.00x','ROI = ($2,500 / $10,000) \u00d7 100 ='}
     for lang in ('de','es'):
         for key,value in catalogs[lang]['strings'].items():
             assert value!=key or key in allowed_same,(lang,'Untranslated English',key)
