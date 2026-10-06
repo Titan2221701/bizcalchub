@@ -150,9 +150,10 @@ def generated_sections(source,lang,text):
     text=text.replace('</head>','\n'.join(head)+'\n</head>',1)
     label=CATALOGS[lang]['strings']['Language']
     switch=['    <!-- language-switcher:start -->',f'    <nav class="language-switcher" aria-label="{label}">']
+    flags={'en':'\U0001f1ec\U0001f1e7','de':'\U0001f1e9\U0001f1ea','es':'\U0001f1ea\U0001f1f8'}
     for code,name in LANGUAGES.items():
         current=' aria-current="page"' if code==lang else ''
-        switch.append(f'      <a href="{relative_url(page,output_path(source,code))}" lang="{code}" hreflang="{code}"{current}>{name}</a>')
+        switch.append(f'      <a href="{relative_url(page,output_path(source,code))}" lang="{code}" hreflang="{code}"{current}><span aria-hidden="true">{flags[code]}</span> {name}</a>')
     switch += ['    </nav>','    <!-- language-switcher:end -->']
     marker='  </div></header>'
     assert marker in text,source

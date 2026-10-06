@@ -120,7 +120,8 @@ def main():
                 if source.parent != Path('calculators') and source.name != 'index.html':
                     assert 'class="ad"' not in text,path
                 icons=[a for tag,a in page.tags if tag=='link' and a.get('rel')=='icon']
-                assert any(a.get('href')=='/assets/bizcalchub-logo.png' and a.get('type')=='image/png' for a in icons)
+                assert icons==[{'rel':'icon','type':'image/png','href':'/assets/favicon.png'}]
+                assert [a for a in page.links if a.get('rel')=='apple-touch-icon']==[{'rel':'apple-touch-icon','href':'/assets/favicon.png'}]
                 switch=re.search(r'<nav class="language-switcher".*?</nav>',text,re.S).group()
                 assert len(re.findall(r'<a\b',switch))==3
                 assert switch.count('aria-current="page"')==1
