@@ -200,7 +200,7 @@ def build_sitemap():
     ET.indent(root, space='  ')
     xml = ET.tostring(root, encoding='unicode')
     (ROOT/'sitemap.xml').write_text(
-        '<?xml version="1.0" encoding="UTF-8"?>\n'+xml+'\n',
+        '<?xml version="1.0" encoding="UTF-8"?>\n'+xml,
         encoding='utf-8', newline='\n')
 
 
