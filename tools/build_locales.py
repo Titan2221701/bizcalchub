@@ -191,7 +191,12 @@ def build_sitemap():
         for lang in LANGUAGES:
             entry = ET.SubElement(root, f'{{{namespace}}}url')
             ET.SubElement(entry, f'{{{namespace}}}loc').text = absolute_url(source, lang)
-            for alternate in (*LANGUAGES, 'x-default'):
+            for source in INDEXABLE_SOURCES:
+                entry = ET.SubElement(root, f'{{{namespace}}}url')
+                ET.SubElement(
+                    entry,
+                    f'{{{namespace}}}loc'
+                ).text = absolute_url(source)
                 ET.SubElement(entry, f'{{{xhtml_namespace}}}link', {
                     'rel': 'alternate',
                     'hreflang': alternate,
@@ -201,7 +206,7 @@ def build_sitemap():
     xml = ET.tostring(root, encoding='unicode')
     (ROOT/'sitemap.xml').write_text(
         '<?xml version="1.0" encoding="UTF-8"?>\n'+xml,
-        encoding='utf-8', newline='\n')
+        encoding='utf-8',
 
 
 def build():
