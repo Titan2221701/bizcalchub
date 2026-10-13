@@ -11,6 +11,7 @@ import os
 import posixpath
 import re
 import sys
+import xml.etree.ElementTree as ET
 
 for stream in (sys.stdout, sys.stderr):
     if hasattr(stream, 'reconfigure'):
@@ -174,6 +175,30 @@ def strip_generated(text):
     return text
 
 
+def build_sitemap():
+    """Write only the sitemap, preserving indexable URLs and language alternatives."""
+    namespace = 'http://www.sitemaps.org/schemas/sitemap/0.9'
+    xhtml_namespace = 'http://www.w3.org/1999/xhtml'
+    ET.register_namespace('', namespace)
+    ET.register_namespace('xhtml', xhtml_namespace)
+    root = ET.Element(f'{{{namespace}}}urlset')
+    for source in INDEXABLE_SOURCES:
+        for lang in LANGUAGES:
+            entry = ET.SubElement(root, f'{{{namespace}}}url')
+            ET.SubElement(entry, f'{{{namespace}}}loc').text = absolute_url(source, lang)
+            for alternate in (*LANGUAGES, 'x-default'):
+                ET.SubElement(entry, f'{{{xhtml_namespace}}}link', {
+                    'rel': 'alternate',
+                    'hreflang': alternate,
+                    'href': absolute_url(source, 'en' if alternate == 'x-default' else alternate),
+                })
+    ET.indent(root, space='  ')
+    xml = ET.tostring(root, encoding='unicode')
+    (ROOT/'sitemap.xml').write_text(
+        '<?xml version="1.0" encoding="UTF-8"?>\n'+xml+'\n',
+        encoding='utf-8', newline='\n')
+
+
 def build():
     script_hash=hashlib.sha256((ROOT/'script.js').read_bytes()).hexdigest()
     # English remains the source of truth. Remove only our generated blocks on rebuild.
@@ -191,20 +216,13 @@ def build():
             target=ROOT/output_path(source,lang)
             target.parent.mkdir(parents=True,exist_ok=True)
             target.write_text(generated,encoding='utf-8',newline='\n')
-    urls=['<?xml version="1.0" encoding="UTF-8"?>',
-          '<!-- Production sitemap for bizcalchub.top. -->',
-          '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">']
-    for source in INDEXABLE_SOURCES:
-        for lang in LANGUAGES:
-            urls += ['  <url>',f'    <loc>{absolute_url(source,lang)}</loc>']
-            for alternate in (*LANGUAGES,'x-default'):
-                urls.append(f'    <xhtml:link rel="alternate" hreflang="{alternate}" href="{absolute_url(source,"en" if alternate=="x-default" else alternate)}" />')
-            urls += ['  </url>']
-    urls += ['</urlset>']
+    build_sitemap()
     (ROOT/'robots.txt').write_text('# Production crawl configuration.\nUser-agent: *\nAllow: /\nSitemap: '+BASE_URL+'/sitemap.xml\n', encoding='utf-8')
-    (ROOT/'sitemap.xml').write_text('\n'.join(urls)+'\n',encoding='utf-8')
     assert hashlib.sha256((ROOT/'script.js').read_bytes()).hexdigest()==script_hash
     print(f'Built {len(SOURCES)*len(LANGUAGES)} UTF-8 pages; {len(INDEXABLE_SOURCES)*len(LANGUAGES)} indexable sitemap entries; directory home links, absolute breadcrumbs, and robots sitemap reference.')
 
 if __name__=='__main__':
-    build()
+    if sys.argv[1:] == ['--sitemap-only']:
+        build_sitemap()
+    else:
+        build()
