@@ -33,9 +33,14 @@ def output_path(source, lang):
 
 def absolute_url(source, lang):
     path = output_path(source, lang).as_posix()
+
+    if path.startswith("http://") or path.startswith("https://"):
+        return path
+
     if source.name == 'index.html':
-        path = '' if lang == 'en' else lang+'/'
-    return BASE_URL+'/'+path
+        path = '' if lang == 'en' else lang + '/'
+
+    return BASE_URL.rstrip('/') + '/' + path.lstrip('/')
 
 
 def relative_url(page, target):
